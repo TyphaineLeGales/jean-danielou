@@ -1,3 +1,7 @@
+---
+import Topbar from '../components/Topbar.vue';
+import Sidebar from '../components/Sidebar.vue';
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,10 +10,17 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Jean Daniélou</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Balthazar&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<slot />
+		<Topbar client:media="(max-width: 768px)"/>
+		<Sidebar client:load/>
+		<div class="w-full md:w-[calc(100%-var(--spacing)*10)] h-full">
+			<slot />
+		</div>
 	</body>
 </html>
 
