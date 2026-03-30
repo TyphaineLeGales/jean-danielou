@@ -1,7 +1,7 @@
 <template>
     <div>
-        <nav class="w-full flex justify-between p-4 border-b">
-            <div class="flex-1 font-balthazar text-2xl ">
+        <nav class="w-full flex justify-between p-2 md:p-4 border-b bg-white">
+            <div class="flex-1 font-balthazar text-xl ">
                 <a href="/" class="cursor-pointer">Jean Daniélou</a>
             </div>
             <ul class="font-lexend flex-1 justify-between hidden md:flex">

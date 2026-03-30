@@ -2,14 +2,25 @@
 
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import compo1 from '../assets/INCORP_compo_1.png';
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import compo1 from '../assets/INCOPR_compo_1_test.png';
+
+import IconArrow from '../components/UI/IconArrow.vue'
+import ListItem from '../components/ListItem.vue';
+import {recentWork }from '../config/dummyData'
 ---
 
 <Layout>
-	<Image class="absolute invert h-full w-auto rotate-90 mix-blend-hard-light hidden md:block" src={compo1} alt="Abstract drawing of flux" />
-	<div class="w-full md:w-[calc(100%-var(--spacing)*10)] h-full flex items-center justify-end absolute">
-		<h1 class="text-3xl font-balthazar w-full md:w-1/3 bg-white mr-10"> I enquire on how energy infrastructures shape territories, drive globalization, fuel capitalism and produce violence</h1>
+	<div class="fixed size-full pointer-events-none opacity-75 hidden md:block -z-10 -translate-y-1/6" style={`background-image:url(${compo1.src});background-size:contain;background-repeat:no-repeat`}></div>
+	<Image class=" h-auto w-auto -translate-x-2 md:hidden opacity-75" src={compo1} alt="Abstract drawing of flux" />
+	<div class="w-full md:w-[calc(100%-var(--spacing)*10)] flex flex-col items-end justify-end">
+		<h1 class="md:text-5xl text-3xl font-balthazar md:w-1/2 bg-white md:mt-36 p-4 leading-12 xl:leading-24"> 
+			I enquire on how <span class="font-lexend text-2xl md:text-4xl">energy infrastructures</span> shape territories, drive <span class="font-lexend text-2xl md:text-4xl">globalization</span>, fuel <span class="font-lexend text-2xl md:text-4xl">capitalism</span> and produce <span class="font-lexend text-2xl md:text-4xl">violence</span>
+		</h1>
+	</div>
+	<div class="w-full mt-4 p-4 md:absolute bottom-0">
+		<span class="flex justify-start items-center"> <IconArrow class="scale-75"/> <h3 class="text-xl text-left font-lexend font-medium text-gray-800">Recent work</h3></span>
+		<ul class="w-full">
+			{recentWork.map(e =><li class="border-b px-2 md:px-4 bg-white first:border-t"><ListItem text={e.title} client:visible/></li>)}
+		</ul>
 	</div>
 </Layout>

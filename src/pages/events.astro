@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import compo4 from '../assets/INCOPR_compo_4_test.png'
+import BgImage from '../components/UI/BgImage.vue'
 ---
 <Layout>
+	<BgImage img={compo4} client:visible />
 	<p>This is the events page</p>
 </Layout>

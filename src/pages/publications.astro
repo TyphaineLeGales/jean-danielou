@@ -1,6 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import {publications} from '../config/dummyData.js'
+import ListItem from '../components/ListItem.vue'
+import BgImage from '../components/UI/BgImage.vue'
+import compo2 from '../assets/INCORP_compo_2_test.png'
+
 ---
 <Layout>
-	<p>This is the publications page</p>
+    <BgImage img={compo2} client:visible />
+    <ul>
+        {publications.map(e =>  <li class="border-b px-2 md:px-4"><ListItem text={e.title.fr} client:visible/> </li>)}
+    </ul>
 </Layout>
