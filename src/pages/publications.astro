@@ -7,8 +7,8 @@ import compo2 from '../assets/INCORP_compo_2_test.png'
 
 ---
 <Layout>
-    <BgImage img={compo2} client:visible />
+    <BgImage img={compo2}/>
     <ul>
-        {publications.map(e =>  <li class="border-b px-2 md:px-4"><ListItem text={e.title.fr} client:visible/> </li>)}
+        {publications.map(e =>  <li class="px-2 border-b md:px-4"><ListItem text={e.title.fr} client:visible/> </li>)}
     </ul>
 </Layout>

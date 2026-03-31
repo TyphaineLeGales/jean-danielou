@@ -1,5 +1,6 @@
 ---
-import Topbar from '../components/Topbar.vue';
+import Topbar from '../components/Topbar.astro';
+import Footer from '../components/Footer.astro';
 import Sidebar from '../components/Sidebar.vue';
 ---
 <!doctype html>
@@ -16,11 +17,12 @@ import Sidebar from '../components/Sidebar.vue';
 		<link href="https://fonts.googleapis.com/css2?family=Balthazar&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<Topbar client:media="(max-width: 768px)"/>
-		<Sidebar client:load/>
-		<div class="w-full h-full md:w-[calc(100%-var(--spacing)*10)]">
+		<Topbar/>
+		<Sidebar />
+		<main class="w-full h-full md:w-[calc(100%-var(--spacing)*10)] mt-12 md:mt-15">
 			<slot />
-		</div>
+		</main>
+		<Footer/>
 	</body>
 </html>
 

@@ -1,52 +1,70 @@
 <template>
-  <div class="overflow-hidden w-full relative cursor-pointer">
-    <h1
-      ref="titleRef"
-      :class="['scrolling-title text-xl md:text-3xl font-balthazar my-4', isOverflowing ? 'scrolling' : 'truncate']"
-      :style="scrollStyle"
+  <div ref="containerRef" class="relative w-full overflow-hidden cursor-pointer">
+    <!--hidden span for measurement -->
+    <span ref="measureRef" class="text-xl measure md:text-3xl font-balthazar" aria-hidden="true">{{ text }}</span>
+
+    <div
+      v-if="isOverflowing"
+      class="scrolling-track"
+      :class="{ paused: hovering }"
+      :style="{ '--duration': `${scrollDuration}s` }"
       @mouseenter="hovering = true"
       @mouseleave="hovering = false"
     >
+      <span class="text-xl scrolling-item md:text-3xl font-balthazar">{{ text }}</span>
+      <span class="text-xl scrolling-item md:text-3xl font-balthazar" aria-hidden="true">{{ text }}</span>
+    </div>
+
+    <component
+      :is="tag"
+      v-else
+      class="text-xl truncate md:text-3xl font-balthazar"
+    >
       {{ text }}
-    </h1>
+    </component>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch, nextTick, computed } from 'vue'
+import { ref, onMounted, onUnmounted, watch, nextTick, computed } from 'vue'
+
+const PX_PER_SECOND = 30
 
 const props = defineProps({
-  text: { type: String, required: true }
+  text: { type: String, required: true },
+  tag: { type: String, default: 'p' }
 })
 
-const titleRef = ref(null)
+const containerRef = ref(null)
+const measureRef = ref(null)
 const isOverflowing = ref(false)
 const containerWidth = ref(0)
 const textWidth = ref(0)
 const hovering = ref(false)
 
-const scrollDuration = computed(() => {
-  if (!textWidth.value || !containerWidth.value) return 0
-  // Adjust speed: 100px per 5s (tweak as desired)
-  return ((textWidth.value + containerWidth.value) / 100) * 5
-})
+const scrollDuration = computed(() =>
+  textWidth.value && containerWidth.value
+    ? (textWidth.value + containerWidth.value) / PX_PER_SECOND
+    : 0
+)
 
-const scrollStyle = computed(() => ({
-  '--paused': hovering.value ? 'paused' : 'running',
-  animationDuration: `${scrollDuration.value}s`
-}))
+let ro
 
 const checkOverflow = () => {
-  const el = titleRef.value
-  if (!el) return
-  containerWidth.value = el.parentElement.clientWidth
-  textWidth.value = el.scrollWidth
+  if (!containerRef.value || !measureRef.value) return
+  containerWidth.value = containerRef.value.clientWidth
+  textWidth.value = measureRef.value.scrollWidth
   isOverflowing.value = textWidth.value > containerWidth.value
 }
 
-onMounted(() => {
+onMounted(async () => {
+  await document.fonts.ready
   checkOverflow()
+  ro = new ResizeObserver(checkOverflow)
+  ro.observe(containerRef.value)
 })
+
+onUnmounted(() => ro?.disconnect())
 
 watch(() => props.text, async () => {
   await nextTick()
@@ -54,34 +72,32 @@ watch(() => props.text, async () => {
 })
 </script>
 
-<style>
-.scrolling-title {
-  display: inline-block;
+<style scoped>
+.measure {
+  position: fixed;
+  visibility: hidden;
   white-space: nowrap;
-  /* Pause/play controlled via CSS variable */
-  animation-play-state: var(--paused, running);
+  width: auto;
+  pointer-events: none;
 }
 
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
+.scrolling-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--duration, 8s) linear infinite;
+}
+
+.scrolling-track.paused {
+  animation-play-state: paused;
+}
+
+.scrolling-item {
   white-space: nowrap;
+  padding-right: 4rem;
 }
 
-/* Only scroll if overflowing */
-.scrolling {
-  animation-name: scrollText;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-/* Keyframes scroll from left edge to fully hidden */
-@keyframes scrollText {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
 }
 </style>

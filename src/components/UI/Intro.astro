@@ -1,0 +1,62 @@
+---
+---
+<div id="intro" class="intro">
+  <div class="w-full h-3 bg-toxic-green bar "></div>
+  <div class="content">
+    <h1 class="text-3xl font-balthazar">Jean Daniélou</h1>
+    <p class="text-lg font-lexend">sociologist . ethnographer</p>
+  </div>
+</div>
+<script>
+  const intro = document.getElementById('intro')
+  if (!sessionStorage.getItem('introPlayed') && intro) {
+    intro.style.display = 'flex'
+    sessionStorage.setItem('introPlayed', 'true')
+  }
+</script>
+<style>
+  .intro {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeOut 0.6s ease forwards;
+    animation-delay: 3s;
+    pointer-events: none;
+  }
+
+  .bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: left;
+    animation: progress 3s ease-in-out forwards;
+  }
+
+  .content {
+    text-align: center;
+    animation: fadeOutContent 0.4s ease forwards;
+    animation-delay: 2.8s;
+  }
+
+  @keyframes progress {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  @keyframes fadeOutContent {
+    to { opacity: 0; }
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+  }
+</style>

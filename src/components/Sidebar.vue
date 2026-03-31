@@ -1,5 +1,5 @@
 <template>
-    <div class="z-20 fixed h-full w-4 md:w-10 bg-toxic-green right-0 cursor-pointer" @click="openSidebar">
+    <div class="fixed right-0 z-20 w-1 h-full cursor-pointer md:w-4 bg-toxic-green" @click="openSidebar">
     
     </div>
     </template>
