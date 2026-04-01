@@ -13,4 +13,8 @@
   .bg-toxic-green {
     background-color: #44F459;
   }
+
+  .border-toxic-green {
+    border-color: #44F459;
+  }
 }
