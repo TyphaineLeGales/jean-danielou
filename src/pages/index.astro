@@ -14,7 +14,7 @@ import {recentWork }from '../config/dummyData'
 	<div class="fixed hidden opacity-75 pointer-events-none size-full md:block -z-10 -translate-y-1/6" style={`background-image:url(${compo1.src});background-size:contain;background-repeat:no-repeat`}></div>
 	<Image class="w-auto h-auto -translate-x-2 opacity-75 md:hidden" src={compo1} alt="Abstract drawing of flux" />
 	<div class="w-full md:w-[calc(100%-var(--spacing)*10)] flex flex-col items-end justify-end">
-		<h1 class="p-4 text-3xl bg-white border-r-6 md:text-5xl font-balthazar md:w-1/2 md:mt-36 leading-12 xl:leading-16 border-toxic-green"> 
+		<h1 class="p-4 text-3xl bg-white md:text-5xl font-balthazar md:w-1/2 md:mt-36 leading-12 xl:leading-16 "> 
 			I enquire on how 
 			<span class="text-2xl font-lexend md:text-4xl">energy infrastructures</span>
 			shape territories, drive <span class="text-2xl font-lexend md:text-4xl">globalization</span>
@@ -23,7 +23,7 @@ import {recentWork }from '../config/dummyData'
 		</h1>
 	</div>
 	<div class="bottom-0 w-full p-4 mt-4 md:absolute">
-		<span class="flex items-center justify-start"> <IconArrow class="scale-75"/> <h3 class="text-xl font-medium text-left text-gray-800 font-lexend">Recent work</h3></span>
+		<span class="flex items-center justify-start"> <IconArrow class="scale-75"/> <h2 class="text-xl font-medium text-left text-gray-800 font-lexend">Recent work</h2></span>
 		<ul class="w-full">
 			{recentWork.map(e =><li class="px-2 bg-white border-b md:px-4 first:border-t">
 				<span class="flex justify-between w-full text-xs md:text-sm"><p class="font-light uppercase font-lexend">{e.type}</p><p class="pr-4 text-right">{e.year}</p></span>

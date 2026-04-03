@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import {publications} from '../config/dummyData.js'
+// import {publications} from '../config/dummyData.js'
 import ListItem from '../components/ListItem.vue'
 import BgImage from '../components/UI/BgImage.vue'
 import compo2 from '../assets/INCORP_compo_2_test.png'
+import { getCollection } from 'astro:content';
+
+const publications = await getCollection('publications')
 
 ---
 <Layout>
     <BgImage img={compo2}/>
     <ul>
-        {publications.map(e =>  <li class="px-2 border-b md:px-4"><ListItem text={e.title.fr} client:visible/> </li>)}
+        {publications.map(e =>  <li class="px-2 border-b md:px-4"><ListItem text={e.data.titleFR} client:visible/> </li>)}
     </ul>
 </Layout>

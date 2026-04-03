@@ -53,7 +53,6 @@ const sweep = () => new Promise((resolve) => {
     .sort((a, b) => Number(a.dataset.delay) - Number(b.dataset.delay))
   gsap.set(blocks, { opacity: 0 })
   gsap.to(blocks, {
-
     keyframes: [
       { opacity: 1, duration: 0.01 },
       {opacity:1, duration: (i, target) => Number(target.dataset.outDelay*0.005) },
@@ -71,8 +70,10 @@ const sweep = () => new Promise((resolve) => {
 })
 
 
+
 onMounted(async () => {
   buildGrid()
+  //gsap.set(blocks, { opacity: 0 })
   gsap.set(transitionEl.value, { x: 0 })
   await sweep()
   window.addEventListener('resize', buildGrid)
@@ -95,7 +96,7 @@ onUnmounted(() => {
 .pixel-block {
   width: 100%;
   background: #44F459;
-  opacity: 1;
+  opacity: 0;
 }
 </style>
 

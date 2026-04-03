@@ -26,7 +26,7 @@ import PageTransition from '../components/PageTransition.vue';
 			<slot />
 		</main>
 		<Footer/>
-		<PageTransition client:load />
+		<PageTransition client:media="(min-width: 768px)" />
 	</body>
 </html>
 
