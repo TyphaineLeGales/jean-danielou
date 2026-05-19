@@ -5,8 +5,8 @@ import { getCollection } from 'astro:content';
 const books = await getCollection('books')
 ---
 <Layout>
-    <h1>Books</h1>
-    <ul>
+    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend">Books</h1>
+    <ul class="w-3/4 pl-20">
         {books.map(book => 
         <li>
             <Book data={book.data} description={book.body}/> 

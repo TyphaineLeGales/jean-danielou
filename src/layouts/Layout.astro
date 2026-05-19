@@ -23,7 +23,9 @@ import PageTransition from '../components/PageTransition.vue';
 		<Topbar/>
 		<Sidebar />
 		<main class="w-full h-full md:w-[calc(100%-var(--spacing)*10)] mt-12 md:mt-15">
-			<slot />
+			<div class="p-2 md:p-4">
+				<slot />
+			</div>
 		</main>
 		<Footer/>
 		<!-- <PageTransition client:media="(min-width: 768px)" /> -->
