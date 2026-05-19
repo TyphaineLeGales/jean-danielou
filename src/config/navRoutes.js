@@ -1,7 +1,6 @@
 export const routes = [
-  { name: "About", path: "/about/" },
-  { name: "Publications", path: "/publications/" },
+  { name: "Books", path: "/books/" },
   { name: "Collaborations", path: "/collaborations/" },
-  { name: "Events", path: "/events/" },
-  { name: "Talks", path: "/talks/" },
+  { name: "Medias", path: "/medias/" },
+  { name: "Academic", path: "/academic/" },
 ];
