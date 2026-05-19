@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ListItem from '../components/ListItem.vue'
+import { getCollection } from 'astro:content';
+const books = await getCollection('books')
+console.log("books data", books)
+---
+<Layout>
+    <ul>
+        {books.map(e =>  <li class="px-2 border-b md:px-4"><ListItem text={e.data.titleFR} client:visible/> </li>)}
+    </ul>
+</Layout>

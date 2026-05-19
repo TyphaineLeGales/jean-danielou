@@ -19,5 +19,16 @@ const publications = defineCollection({
   }),
 });
 
+const books = defineCollection({
+  loader: glob({ base: './src/content/books', pattern: '**/*.{md,mdx}' }),
+  schema: z.object({
+    layout: z.string().optional(),
+    title: z.string(),
+    date: z.date(),
+    thumbnail: z.string().optional(),
+    body: z.string().optional(),
+  }),
+});
+
 // 5. Exporter un seul objet `collections` pour enregistrer votre ou vos collections
-export const collections = { publications };
+export const collections = { publications, books, };
