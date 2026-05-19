@@ -24,7 +24,7 @@ const books = defineCollection({
   schema: z.object({
     layout: z.string().optional(),
     title: z.string(),
-    date: z.date(),
+    date: z.string(),
     thumbnail: z.string().optional(),
     body: z.string().optional(),
   }),

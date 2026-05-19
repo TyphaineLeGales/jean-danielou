@@ -5,8 +5,8 @@ const { data, description } = Astro.props;
 <div class="flex">
     <img src={data.thumbnail}/>
     <div class="pl-6">
+        <p class="mb-3">{data.date}</p>
         <h1 class="text-3xl underline font-balthazar">{data.title}</h1>
         <p class="p-6">{description}</p>
-        <p>{data.date}</p>
     </div>
 </div>
