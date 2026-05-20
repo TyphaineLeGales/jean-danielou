@@ -9,6 +9,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  i18n: {
+    locales: ["en", "fr"],
+    defaultLocale: "fr",
+    routing: {
+        prefixDefaultLocale: false
+    }
+  },
 
   integrations: [vue()],
 });

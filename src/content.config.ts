@@ -7,22 +7,20 @@ import { glob, file } from 'astro/loaders';
 // 3. Importer Zod
 import { z } from 'astro/zod';
 
-// 4. Définir un `loader` et un `schema` pour chaque collection
-const publications = defineCollection({
-  loader: glob({ base: './src/content/publications', pattern: '**/*.{md,mdx}' }),
+
+const books_fr = defineCollection({
+  loader: glob({ base: './src/content/books/fr', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
-    titleFR: z.string(),
-    titleEN: z.string(),
-    descriptionFR: z.string(),
-    descriptionEN: z.string(),
-    date: z.coerce.date(),
+    title: z.string(),
+    date: z.string(),
+    thumbnail: z.string().optional(),
+    body: z.string().optional(),
   }),
 });
 
-const books = defineCollection({
-  loader: glob({ base: './src/content/books', pattern: '**/*.{md,mdx}' }),
+const books_en = defineCollection({
+  loader: glob({ base: './src/content/books/en', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
-    layout: z.string().optional(),
     title: z.string(),
     date: z.string(),
     thumbnail: z.string().optional(),
@@ -31,4 +29,4 @@ const books = defineCollection({
 });
 
 // 5. Exporter un seul objet `collections` pour enregistrer votre ou vos collections
-export const collections = { publications, books, };
+export const collections = { books_fr, books_en };
