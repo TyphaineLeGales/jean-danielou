@@ -1,9 +1,15 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import compo4 from '../../assets/INCOPR_compo_4_test.png'
-import BgImage from '../../components/UI/BgImage.vue'
+import Media from '../../components/Media.astro'
+import { getCollection } from 'astro:content';
+const medias = await getCollection('medias_en')
 ---
 <Layout>
-	<BgImage img={compo4} client:visible />
-	<p>This is the events page</p>
+    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend">Medias</h1>
+    <ul class="w-3/4 pl-20">
+        {medias.map(media => 
+        <li class="my-6">
+            <Media data={media.data} description={media.body}/> 
+        </li>)}
+    </ul>
 </Layout>

@@ -1,32 +1,62 @@
-// 1. Importer des utilitaires depuis `astro:content`
-import { defineCollection } from 'astro:content';
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
 
-// 2. Importer un ou plusieurs chargeurs
-import { glob, file } from 'astro/loaders';
+const reviewSchema = z.object({
+  text: z.string(),
+  link: z.string().url(),
+});
 
-// 3. Importer Zod
-import { z } from 'astro/zod';
+const booksSchema = z.object({
+  title: z.string(),
+  date: z.string(),
+  thumbnail: z.string(),
+  lead: z.string(),
+  reviews: z.array(reviewSchema).optional(),
+});
 
-
-const books_fr = defineCollection({
-  loader: glob({ base: './src/content/books/fr', pattern: '**/*.{md,mdx}' }),
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    thumbnail: z.string().optional(),
-    body: z.string().optional(),
-  }),
+const mediasSchema = z.object({
+  title: z.string(),
+  date: z.string(),
+  link: z.string().url(),
+  publishedon: z.string(),
+  text: z.string(),
 });
 
 const books_en = defineCollection({
-  loader: glob({ base: './src/content/books/en', pattern: '**/*.{md,mdx}' }),
-  schema: z.object({
-    title: z.string(),
-    date: z.string(),
-    thumbnail: z.string().optional(),
-    body: z.string().optional(),
+  loader: glob({
+    base: './src/content/books/en',
+    pattern: '**/*.{md,mdx}',
   }),
+  schema: booksSchema,
 });
 
-// 5. Exporter un seul objet `collections` pour enregistrer votre ou vos collections
-export const collections = { books_fr, books_en };
+const books_fr = defineCollection({
+  loader: glob({
+    base: './src/content/books/fr',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: booksSchema,
+});
+
+const medias_en = defineCollection({
+  loader: glob({
+    base: './src/content/medias/en',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: mediasSchema,
+});
+
+const medias_fr = defineCollection({
+  loader: glob({
+    base: './src/content/medias/fr',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: mediasSchema,
+});
+
+export const collections = {
+  books_en,
+  books_fr,
+  medias_en,
+  medias_fr,
+};
