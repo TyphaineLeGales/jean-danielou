@@ -14,7 +14,14 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Year", name: "date", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Catch phrase", name: "lead", widget: "text" }
+      - { label: "Excerpt", name: "body", widget: "markdown" }
+      - label: "Reviews"
+        name: "reviews"
+        widget: "list"
+        fields:
+          - { label: "Review Text", name: "text", widget: "string" }
+          - { label: "Review Link", name: "link", widget: "string" }
   - name: "books_fr"
     label: "Books FR"
     folder: "src/content/books/fr"
@@ -23,4 +30,11 @@ collections:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Année de publication", name: "date", widget: "string" }
       - { label: "Image", name: "thumbnail", widget: "image" }
-      - { label: "Description", name: "body", widget: "markdown" }
+      - {label: "Phrase d'accroche", name: "lead", widget: "text" }
+      - { label: "Extrait", name: "body", widget: "markdown" }
+      - label: "Recensions"
+        name: "reviews"
+        widget: "list"
+        fields:
+          - { label: "Infos", name: "text", widget: "string" }
+          - { label: "Lien", name: "link", widget: "string" }
