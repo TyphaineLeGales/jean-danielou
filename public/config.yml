@@ -8,7 +8,7 @@ public_folder: "/images/uploads"
 collections:
   - name: "books_en"
     label: "Books EN"
-    folder: "src/content/books_en"
+    folder: "src/content/books/en"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
@@ -17,7 +17,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "books_fr"
     label: "Books FR"
-    folder: "src/content/books_fr"
+    folder: "src/content/books/fr"
     create: true
     fields:
       - { label: "Titre", name: "title", widget: "string" }
