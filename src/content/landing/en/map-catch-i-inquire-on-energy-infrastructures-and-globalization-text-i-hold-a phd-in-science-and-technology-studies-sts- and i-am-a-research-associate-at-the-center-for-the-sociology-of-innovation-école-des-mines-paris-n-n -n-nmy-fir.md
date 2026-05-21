@@ -1,9 +1,9 @@
 ---
 catch: I inquire on energy infrastructures and globalization
 text: >-
-  I hold a PhD in science and technology studies (STS), and I am a research
+  **I hold a PhD in science and technology studies (STS), and I am a research
   associate at the Center for the Sociology of Innovation, École des Mines,
-  Paris.
+  Paris.**
 
 
   My first book, *Exiting the Fossil World*, depicts how oil and gas companies are moving through the planet to capture natural resources, territorialize infrastructures and produce variegated forms of globalization.
