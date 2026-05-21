@@ -1,11 +1,13 @@
 ---
-const { data, description } = Astro.props;
+const { data } = Astro.props;
 ---
 
-<div class="flex">
-    <a class="pl-6" href={data.link}>
-        <p class="mb-3">{data.date}</p>
-        <h1 class="text-3xl underline font-balthazar">{data.title}</h1>
-        <p class="p-6">{description}</p>
+<div class="flex pt-12 pb-6 my-3 border-b-1">
+    <a class="pl-6" href={data.link} target="_blank">
+        <h1 class="w-2/3 mb-2 text-4xl underline font-balthazar">{data.title}</h1>
+        <div class="flex">
+            <p class="flex-1"> Publié sur <span class="font-bold">{data.publishedon}</span> le {data.date}</p>
+            <p class="p-6 flex-2">{data.text}</p>
+        </div>
     </a>
 </div>

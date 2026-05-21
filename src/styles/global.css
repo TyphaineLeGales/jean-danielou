@@ -11,10 +11,26 @@
   }
 
   .bg-toxic-green {
-    background-color: #44F459;
+    background-color: #61FF74;
   }
 
   .border-toxic-green {
-    border-color: #44F459;
+    border-color: #61FF74;
   }
+
+}
+.page-header {
+  width: fit-content;
+  position:relative;
+  z-index:10;
+}
+.page-header::after {
+  content:'';
+  height: 20px;
+  width: 100%;
+  background-color: #61FF74;
+  position:absolute;
+  left:0;
+  bottom:-7px;
+  z-index:-1;
 }

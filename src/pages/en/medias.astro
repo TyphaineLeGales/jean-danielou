@@ -5,8 +5,8 @@ import { getCollection } from 'astro:content';
 const medias = await getCollection('medias_en')
 ---
 <Layout>
-    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend">Medias</h1>
-    <ul class="w-3/4 pl-20">
+    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Medias</h1>
+    <ul class="px-20">
         {medias.map(media => 
         <li class="my-6">
             <Media data={media.data} description={media.body}/> 

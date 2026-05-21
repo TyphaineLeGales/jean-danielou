@@ -25,13 +25,13 @@ const lang = Astro.url.pathname.startsWith('/en')
 	<body>
 		<Topbar lang={lang}/>
 		<Sidebar />
-		<main class="w-full h-full md:w-[calc(100%-var(--spacing)*10)] mt-12 md:mt-15">
-			<div class="p-2 md:p-4">
+		<main class="w-full min-h-full mt-12 md:mt-15">
+			<div class="p-2 md:px-12 md:p-4">
 				<slot />
 			</div>
 		</main>
 		<Footer/>
-		<!-- <PageTransition client:media="(min-width: 768px)" /> -->
+		<PageTransition client:media="(min-width: 768px)" />
 	</body>
 </html>
 

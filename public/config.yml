@@ -6,6 +6,20 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  - name: "landing_en"
+    label: "landing EN"
+    folder: "src/content/landing/en"
+    create: false
+    fields: 
+      - {label: "Catch phrase", name: "catch", widget: "string"}
+      - { label: "Text", name: "text", widget: "markdown"}
+  - name: "landing_fr"
+    label: "landing FR"
+    folder: "src/content/landing/fr"
+    create: false
+    fields: 
+      - {label: "Phrase d'accroche", name: "catch", widget: "string"}
+      - { label: "Text", name: "text", widget: "markdown"}
   - name: "books_en"
     label: "Books EN"
     folder: "src/content/books/en"
