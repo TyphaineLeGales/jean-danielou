@@ -1,7 +1,7 @@
 ---
 title: Exiting the Fossil World.
 date: "2024"
-thumbnail: /images/uploads/capture-d’écran-2026-03-11-à-14.57.26-1.png
+thumbnail: /images/uploads/book2.png
 lead: Having built a world in the 20th century based on the exploitation and
   consumption of fossil fuels, multinational energy companies now face the
   necessity of moving away from them. How are they making the energy transition?

@@ -1,7 +1,7 @@
 ---
 title: "Sortir du monde fossile : Les mutations d’une multinationale de l’énergie"
 date: "2024"
-thumbnail: /images/uploads/capture-d’écran-2026-03-11-à-14.57.26-1.png
+thumbnail: /images/uploads/book2.png
 lead: Après avoir bâti au XXe siècle un monde fondé sur l’exploitation et la
   consommation de ressources fossiles, les multinationales du secteur de
   l’énergie se trouvent désormais confrontées à la nécessité de devoir en
@@ -22,7 +22,7 @@ reviews:
       Iran révèle une nouvelle fois notre dépendance aux énergies fossiles et
       devrait nous inciter à en sortir d’urgence, explique le sociologue Jean
       Daniélou, fin connaisseur des infrastructures du monde gazier."
-    link: (https://www.nouvelobs.com/idees/20260321.OBS113427/blocage-du-detroit-d-ormuz-une-infrastructure-c-est-ce-qui-devient-visible-quand-ca-casse.html
+    link: https://www.nouvelobs.com/idees/20260321.OBS113427/blocage-du-detroit-d-ormuz-une-infrastructure-c-est-ce-qui-devient-visible-quand-ca-casse.html
   - text: "23 juillet 2025 Analyse Opinion Critique – « Une question de style. À
       propos des relations entre littérature et sciences sociales » Claude
       Lévi-Strauss et Alain Corbin sont-ils des écrivains avant d’être un
