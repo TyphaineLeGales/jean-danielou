@@ -2,12 +2,13 @@
 const { data } = Astro.props;
 ---
 
-<div class="flex pt-12 pb-6 my-3 border-b-1">
+<div class="flex pt-12 pb-6 my-3 border-b">
     <a class="md:pl-6" href={data.link} target="_blank">
-        <h1 class="mb-2 text-2xl underline md:w-2/3 md:text-4xl font-balthazar">{data.title}</h1>
-        <div class="flex">
-            <p class="flex-1"> Publié sur <span class="font-bold">{data.publishedon}</span> le {data.date}</p>
-            <p class="p-6 flex-2">{data.text}</p>
+        <h1 class="mb-2 text-2xl leading-6 underline md:leading-8 md:w-2/3 md:text-4xl font-balthazar">
+            {data.title}</h1>
+        <div class="flex flex-col md:flex-row">
+            <p class="flex-1 mb-2 text-sm -translate-y-1"> Publié sur <span class="font-bold">{data.publishedon}</span> le {data.date}</p>
+            <p class="py-3 md:p-6 flex-2 leadin-16">{data.text}</p>
         </div>
     </a>
 </div>

@@ -25,7 +25,7 @@ const lang = Astro.url.pathname.startsWith('/en')
 	<body>
 		<Topbar lang={lang}/>
 		<Sidebar />
-		<main class="w-full min-h-full mt-12 md:mt-15">
+		<main class="w-full min-h-full mt-15 md:mt-15">
 			<div class="p-2 md:px-12 md:p-4">
 				<slot />
 			</div>
