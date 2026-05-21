@@ -1,15 +1,5 @@
 ---
 const currentPath = Astro.url.pathname;
-
-/*
-Examples:
-
-/                -> fr
-/about           -> fr
-/en              -> en
-/en/about        -> en
-*/
-
 const isEnglish = currentPath.startsWith('/en');
 
 let frPath = currentPath;

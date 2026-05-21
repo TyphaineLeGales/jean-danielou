@@ -1,26 +1,40 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import compo1 from '../assets/INCOPR_compo_1_test.png';
+import compo1 from '../../assets/INCOPR_compo_1_test.png';
 import Intro from '../../components/UI/Intro.astro';
 
 import IconArrow from '../../components/UI/IconArrow.vue'
 import ListItem from '../../components/ListItem.vue';
 import {recentWork }from '../../config/dummyData'
+import {index} from '../../config/UI'
+import { getCollection } from 'astro:content';
+const landing = await getCollection('landing_en')
+
+const currentPath = Astro.url.pathname;
+const isEnglish = currentPath.startsWith('/en');
+const lang = isEnglish ? "en" : "fr"
 ---
 
 <Layout>
 	<Intro />
 	<div class="fixed hidden opacity-75 pointer-events-none size-full md:block -z-10 -translate-y-1/6" style={`background-image:url(${compo1.src});background-size:contain;background-repeat:no-repeat`}></div>
 	<Image class="w-auto h-auto -translate-x-2 opacity-75 md:hidden" src={compo1} alt="Abstract drawing of flux" />
-	<div class="w-full md:w-[calc(100%-var(--spacing)*10)] flex flex-col items-end justify-end">
-		<h1 class="p-4 text-3xl bg-white md:text-5xl font-balthazar md:w-1/2 md:mt-36 leading-12 xl:leading-16 "> 
-			I enquire on how 
-			<span class="text-2xl font-lexend md:text-4xl">energy infrastructures</span>
-			shape territories, drive <span class="text-2xl font-lexend md:text-4xl">globalization</span>
-			, fuel <span class="text-2xl font-lexend md:text-4xl">capitalism</span> 
-			and produce <span class="text-2xl font-lexend md:text-4xl">violence</span>
+	<div class="w-full md:w-[calc(100%-var(--spacing)*10)] flex flex-col items-center">
+		<h1 class="text-3xl bg-white md:text-5xl font-balthazar md:mt-36 leading-12 xl:leading-16 "> 
+			{index[`title_${lang}`].map((item) => (
+			item.highlight ? (
+				<span class="text-2xl font-lexend md:text-4xl">
+				{item.text}
+				</span>
+			) : (
+				item.text
+			)
+			))}
 		</h1>
+		<p class="whitespace-pre-line">
+			{landing[0].data.text }
+		</p>
 	</div>
 	<div class="bottom-0 w-full p-4 mt-4 md:absolute">
 		<span class="flex items-center justify-start"> <IconArrow class="scale-75"/> <h2 class="text-xl font-medium text-left text-gray-800 font-lexend">Recent work</h2></span>

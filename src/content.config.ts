@@ -1,5 +1,6 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection} from 'astro:content';
 import { glob } from 'astro/loaders';
+import { z } from 'astro/zod'
 
 const reviewSchema = z.object({
   text: z.string(),
@@ -21,6 +22,28 @@ const mediasSchema = z.object({
   publishedon: z.string(),
   text: z.string(),
 });
+
+const landingSchema = z.object({
+  catch: z.string(),
+  text: z.string()
+})
+
+const landing_en = defineCollection({
+  loader: glob({
+    base: './src/content/landing/en',
+    pattern: '**/*.{md,mdx}'
+  }),
+  schema: landingSchema
+})
+
+const landing_fr = defineCollection({
+  loader: glob({
+    base: './src/content/landing/fr',
+    pattern: '**/*.{md,mdx}'
+  }),
+  schema: landingSchema
+})
+
 
 const books_en = defineCollection({
   loader: glob({
@@ -55,6 +78,8 @@ const medias_fr = defineCollection({
 });
 
 export const collections = {
+  landing_en,
+  landing_fr,
   books_en,
   books_fr,
   medias_en,
