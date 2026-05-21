@@ -3,7 +3,7 @@ const textUI = {
         title_en: [
             { text: "I enquire on" },
             { text: "energy infrastructures", highlight: true },
-            { text: "and" },
+            { text: "and"},
             { text: "globalisation", highlight: true }
         ],
         title_fr: [

@@ -5,13 +5,13 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 import "../styles/global.css";
 const { lang } = Astro.props;
 ---
-<nav class="fixed top-0 z-50 flex justify-between w-full p-2 bg-white border-b md:p-4 md:px-12">
+<nav class="fixed top-0 z-50 flex justify-between w-full p-2 bg-white border-b md:p-2 md:px-12">
   <div class="flex-1 text-xl font-balthazar">
-    <a href="/">Jean Daniélou</a>
+    <a href="/"><p class="text-xl">Jean Daniélou</p> <p class="text-xs -translate-y-1.5 font-lexend">social theory | energy | globalisation</p></a>
   </div>
-  <ul class="justify-between flex-1 hidden font-lexend md:flex">
+  <ul class="items-center justify-between flex-1 hidden font-lexend md:flex">
     {routes.map(route => (
-      <li>
+      <li class="h-fit">
         <a href={lang === 'en' ? `/en${route.path}` : route.path}>
           {route.name}
         </a>
