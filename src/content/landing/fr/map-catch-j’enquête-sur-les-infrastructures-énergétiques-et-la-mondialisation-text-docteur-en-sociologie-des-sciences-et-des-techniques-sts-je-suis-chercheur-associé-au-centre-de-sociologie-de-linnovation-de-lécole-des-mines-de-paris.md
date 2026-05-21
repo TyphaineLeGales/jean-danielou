@@ -6,9 +6,6 @@ text: >-
   Paris. 
 
 
-   
-
-
   Mon premier livre, *Sortir du monde fossile*, décrit la manière dont les compagnies pétro-gazières se déplacent à travers le monde pour s’approprier les ressources naturelles, implanter des infrastructures et produire différentes formes de mondialisation. 
 
 
