@@ -15,4 +15,6 @@ text: The Weather Map is a visual model to investigate public debates on media.
   Bruno Latour. In particular, the visual model pushes the boundaries of network
   visualization, explor-ing advanced techniques of graphic design. The outcome
   is a web-based application
+tags:
+  - name: Energy
 ---
