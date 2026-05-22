@@ -1,6 +1,17 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Academic from '../../components/Academic.astro'
+import { getCollection } from 'astro:content';
+const academics = await getCollection('academic_en')
 ---
 <Layout>
-	<p>This is the talks page</p>
+    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">
+		Academic
+	</h1>
+    <ul class="px-20">
+        {academics.map(media => 
+        <li class="my-6">
+            <Academic data={media.data} description={media.body}/> 
+        </li>)}
+    </ul>
 </Layout>

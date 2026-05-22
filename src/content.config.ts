@@ -8,7 +8,7 @@ const reviewSchema = z.object({
 });
 
 const tagSchema = z.object({
-  name: z.string()
+  name: z.string().optional()
 });
 
 const booksSchema = z.object({

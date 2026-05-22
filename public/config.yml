@@ -101,4 +101,4 @@ collections:
         name: "tags"
         widget: "list"
         fields:
-          - { label: "Name", name: "text", widget: "string" }
+          - { label: "Name", name: "name", widget: "string" }
