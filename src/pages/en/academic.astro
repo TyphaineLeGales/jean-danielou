@@ -3,13 +3,16 @@ import Layout from '../../layouts/Layout.astro';
 import Academic from '../../components/Academic.astro'
 import { getCollection } from 'astro:content';
 const academics = await getCollection('academic_en')
+const sorted = academics.sort(
+  (a, b) => Number(b.data.date) - Number(a.data.date)
+);
 ---
 <Layout>
     <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">
 		Academic
 	</h1>
     <ul class="px-20">
-        {academics.map(media => 
+        {sorted.map(media => 
         <li class="my-6">
             <Academic data={media.data} description={media.body}/> 
         </li>)}
