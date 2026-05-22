@@ -55,7 +55,7 @@ const frPath = computed(() => {
 }
 
 .language-switcher a {
-  opacity: 0.3;
+  opacity: 0.6;
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
