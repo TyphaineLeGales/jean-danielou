@@ -1,55 +1,17 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
-import compo1 from '../../assets/INCOPR_compo_1_test.png';
-import Intro from '../../components/UI/Intro.astro';
-
-import IconArrow from '../../components/UI/IconArrow.vue'
-import ListItem from '../../components/ListItem.vue';
-import {recentWork }from '../../config/dummyData'
-import {index} from '../../config/UI'
+import About from '../../components/About.astro';
+import SelectedWork from '../../components/SelectedWork.astro';
+import { marked } from "marked";
 import { getCollection } from 'astro:content';
 const landing = await getCollection('landing_en')
-import { marked } from "marked";
 const content = marked.parse(landing[0].data.text);
-
 const currentPath = Astro.url.pathname;
 const isEnglish = currentPath.startsWith('/en');
 const lang = isEnglish ? "en" : "fr"
 ---
 
 <Layout>
-	<Intro />
-	<div class="fixed hidden pointer-events-none size-full md:block -z-10 lg:-translate-y-1/6 -translate-x-1/5" style={`background-image:url(${compo1.src});background-size:contain;background-repeat:no-repeat`}></div>
-	<Image class="w-auto h-auto -translate-x-2 md:hidden" src={compo1} alt="Abstract drawing of flux" />
-	<div class="flex flex-col w-full lg:w-1/3 md:mt-24 lg:ml-[50%]">
-		<h1 class="flex-1 text-3x md:text-5xl font-balthazar ">
-			{index[`title_${lang}`].map((item) => (
-				item.highlight ? (
-				<span class="text-2xl highlight-marker font-lexend md:text-4xl">
-					{item.text}
-				</span>
-				) : (
-				<>
-					{item.text}{" "}
-				</>
-				)
-			))}
-		</h1>
-		<div class="flex-1 m-4 prose whitespace-pre-line bg-white">
-			<Fragment set:html={content} />
-		</div>
-	</div>
-	<div class="md:w-[calc(100%-var(--spacing)*24)] mt-4 -bottom-10 md:absolute bg-white">
-		
-		<h2 class="w-full mb-12 text-5xl font-semibold text-right uppercase font-lexend page-header"> Selected work</h2>
-		<ul class="w-full">
-			{recentWork.map(e =><li class="px-2 bg-white border-b md:px-4 first:border-t">
-				<span class="flex justify-between w-full text-xs md:text-sm"><p class="font-light uppercase font-lexend">{e.type}</p><p class="pr-4 text-right">{e.year}</p></span>
-				<ListItem text={e.title} client:visible/>
-			</li>)}
-		</ul>
-	</div>
+	<About content={content} lang={lang}/>
+	<SelectedWork lang={lang}/>
 </Layout>
-
-

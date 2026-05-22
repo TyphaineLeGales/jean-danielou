@@ -11,7 +11,9 @@ const textUI = {
             {text: "infrastructures énergétiques", highlight: true},
             {text: "et la"},
             {text: "mondialisation", highlight: true}
-        ]
+        ],
+        selected_en : "Selected work",
+        selected_fr : "Selection de travaux"
     }
 }
 
