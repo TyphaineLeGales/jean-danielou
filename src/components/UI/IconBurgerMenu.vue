@@ -1,5 +1,5 @@
 <template>
-  <button class="relative w-6 h-6">
+  <button class="relative w-6 h-6 ">
     <span
       class="absolute left-0 w-full h-0.5 bg-gray-900 transition-all duration-300"
       :class="open ? 'top-1/2 rotate-45' : 'top-1'"

@@ -4,12 +4,12 @@
             <li v-for="route in routes" class="pb-6"> 
                 <a :href="route.path">{{route.name}}</a>
             </li>
-            <!-- <LanguageSwitcher/> -->
+            <LanguageSwitcher/>
         </ul>
     </div>
 </template>
 <script setup>
-import LanguageSwitcher from './LanguageSwitcher.astro';
+import LanguageSwitcher from './LanguageSwitcher.vue';
 import { routes } from '../config/navRoutes';
 const props = defineProps({
     open : {

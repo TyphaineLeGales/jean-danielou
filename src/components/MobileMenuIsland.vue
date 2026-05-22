@@ -1,7 +1,7 @@
 <template>
   <div>
     <IconBurgerMenu :open="menuOpen" @click="toggleMenuOpen" class="size-12"/>
-    <MobileMenu :open="menuOpen" />
+    <MobileMenu :open="menuOpen" client:load />
   </div>
 </template>
 <script setup>
