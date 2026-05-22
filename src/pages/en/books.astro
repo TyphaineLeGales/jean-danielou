@@ -2,12 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import Book from '../../components/Book.astro'
 import { getCollection } from 'astro:content';
-const books = await getCollection('books_en')
+const books = await getCollection('books_fr')
+const sortedBooks = books.sort(
+  (a, b) => Number(b.data.date) - Number(a.data.date)
+);
 ---
 <Layout>
     <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Books</h1>
-    <ul class="w-3/4 pl-20">
-        {books.map(book => 
+    <ul class=" md:pl-20">
+        {sortedBooks.map(book => 
         <li class="my-6">
             <Book data={book.data} description={book.body}/> 
         </li>)}
