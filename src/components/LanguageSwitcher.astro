@@ -5,19 +5,17 @@ const isEnglish = currentPath.startsWith('/en');
 let frPath = currentPath;
 let enPath = currentPath;
 
-// Convert to EN
 if (!isEnglish) {
   enPath = `/en${currentPath === '/' ? '' : currentPath}`;
 }
 
-// Convert to FR
 if (isEnglish) {
   frPath = currentPath.replace(/^\/en/, '') || '/';
 }
 ---
 
 <nav class="language-switcher">
-  <a href={frPath} aria-current={!isEnglish ? 'page' : undefined}>
+  <a href={frPath} aria-current={!isEnglish ? 'page' : undefined} >
     FR
   </a>
 
@@ -32,5 +30,16 @@ if (isEnglish) {
 .language-switcher {
   display: flex;
   gap: 0.5rem;
+}
+
+.language-switcher a {
+  opacity: 0.3;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.language-switcher a[aria-current="page"] {
+  opacity: 1;
+  text-decoration: underline !important;
 }
 </style>
