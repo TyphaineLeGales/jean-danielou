@@ -7,6 +7,10 @@ const reviewSchema = z.object({
   link: z.string().url(),
 });
 
+const tagSchema = z.object({
+  name: z.string()
+});
+
 const booksSchema = z.object({
   title: z.string(),
   date: z.string(),
@@ -21,6 +25,15 @@ const mediasSchema = z.object({
   link: z.string().url(),
   publishedon: z.string(),
   text: z.string(),
+});
+
+const academicSchema = z.object({
+  title: z.string(),
+  date: z.string(),
+  link: z.string().url(),
+  publishedon: z.string(),
+  text: z.string(),
+  tags: z.array(tagSchema).optional()
 });
 
 const landingSchema = z.object({
@@ -77,6 +90,22 @@ const medias_fr = defineCollection({
   schema: mediasSchema,
 });
 
+const academic_en = defineCollection({
+  loader: glob({
+    base: './src/content/academic/en',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: academicSchema,
+});
+
+const academic_fr = defineCollection({
+  loader: glob({
+    base: './src/content/academic/fr',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: mediasSchema,
+});
+
 export const collections = {
   landing_en,
   landing_fr,
@@ -84,4 +113,6 @@ export const collections = {
   books_fr,
   medias_en,
   medias_fr,
+  academic_en,
+  academic_fr
 };

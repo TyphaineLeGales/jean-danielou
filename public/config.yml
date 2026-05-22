@@ -72,3 +72,33 @@ collections:
       - { label: "Link", name: "link", widget: "string" }
       - { label: "Published on", name: "publishedon", widget: "string" }
       - { label: "Description", name: "text", widget: "string" }
+  - name: "academic_fr"
+    label: "Academic FR"
+    folder: "src/content/academic/fr"
+    create: true
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "string" }
+      - { label: "Lien", name: "link", widget: "string" }
+      - { label: "Publié sur", name: "publishedon", widget: "string" }
+      - { label: "Description", name: "text", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "text", widget: "string" }
+  - name: "academic_en"
+    label: "Academic EN"
+    folder: "src/content/academic/en"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Published on", name: "publishedon", widget: "string" }
+      - { label: "Description", name: "text", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        fields:
+          - { label: "Name", name: "text", widget: "string" }
