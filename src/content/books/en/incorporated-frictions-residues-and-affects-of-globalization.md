@@ -12,5 +12,10 @@ reviews:
     link: https://www.en-attendant-nadeau.fr/2025/12/16/notre-mondialisation/
   - text: Julio Schumacher, revue ETVDES
     link: https://www.revue-etudes.com/critiques-de-livres/incorporated-de-jean-danielou/28365
+images:
+  - image: /images/uploads/incorp_scan_-10.jpeg
+    alt: Picture of the inside of the book
+  - image: /images/uploads/incorp_scan_-16.jpeg
+    alt: Picture of the inside of the book
 ---
 “(…) Global corporations grow and move across the surface of the planet by incorporating other bodies—minerals, plants, animals, humans. From all these entities, they create bodies that they put to work, bodies that they discipline, bodies that they exploit, bodies that they transform, and bodies that they circulate around the world. Paying attention to the formation and movement of these bodies, becoming attuned to their choreography, their rhythm, their pulsations, and their destinations reveals the cascades of friction and tension that border the momentum of globalization.”
