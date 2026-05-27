@@ -1,8 +1,8 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Book from '../../components/Book.astro'
+import Layout from '../../../layouts/Layout.astro';
+import Book from '../../../components/Book.astro'
 import { getCollection } from 'astro:content';
-const books = await getCollection('books_fr')
+const books = await getCollection('books_en')
 const sortedBooks = books.sort(
   (a, b) => Number(b.data.date) - Number(a.data.date)
 );
@@ -12,7 +12,7 @@ const sortedBooks = books.sort(
     <ul class=" md:pl-20">
         {sortedBooks.map(book => 
         <li class="my-6">
-            <Book data={book.data} description={book.body}/> 
+            <Book data={book.data} description={book.body} id={book.id}/> 
         </li>)}
     </ul>
 </Layout>
