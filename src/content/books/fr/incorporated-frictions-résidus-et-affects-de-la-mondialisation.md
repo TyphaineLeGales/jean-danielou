@@ -14,5 +14,10 @@ reviews:
     link: https://www.revue-etudes.com/critiques-de-livres/incorporated-de-jean-danielou/28365
 images:
   - image: /images/uploads/incorp_scan_-16.jpeg
+    alt: Extrait du livre Incorporated avec un texte a droite et une image graphique
+      abstraite a gauche
+  - image: /images/uploads/incorp_scan_-10.jpeg
+    alt: Extrait du livre Incorporated avec un texte a droite et une image graphique
+      abstraite a gauche
 ---
 « (…) les firmes globales croissent et se meuvent à la surface de la planète en incorporant d’autres corps. Des minéraux, des végétaux, des animaux, des humains. De toutes ces entités, elles font des corps qu’elles mettent au travail, des corps qu’elles disciplinent, des corps qu’elles exploitent, des corps qu’elles transforment et qu’elles font circuler à travers le monde. Prêter attention à la prise de forme et à la translation de ces corps, se rendre sensible à leur chorégraphie, à leur rythme, à leurs pulsations et à leurs destinations révèle les cascades de frictions et de tensions qui bordent les élans de mondialisation. »
