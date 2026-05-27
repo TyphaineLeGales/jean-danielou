@@ -7,6 +7,11 @@ const reviewSchema = z.object({
   link: z.string().url(),
 });
 
+const bookimagesSchema = z.object({
+  image: z.string(),
+  alt: z.string()
+})
+
 const tagSchema = z.object({
   name: z.string().optional()
 });
@@ -17,6 +22,7 @@ const booksSchema = z.object({
   thumbnail: z.string(),
   lead: z.string(),
   reviews: z.array(reviewSchema).optional(),
+  images: z.array(bookimagesSchema).optional()
 });
 
 const mediasSchema = z.object({

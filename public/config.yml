@@ -36,6 +36,12 @@ collections:
         fields:
           - { label: "Review Text", name: "text", widget: "string" }
           - { label: "Review Link", name: "link", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        fields:
+          - { label: "image", name: "image", widget: "image"}
+          - { label: "description", name: "alt", widget: "string"}
   - name: "books_fr"
     label: "Books FR"
     folder: "src/content/books/fr"
@@ -52,6 +58,12 @@ collections:
         fields:
           - { label: "Infos", name: "text", widget: "string" }
           - { label: "Lien", name: "link", widget: "string" }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        fields:
+          - { label: "image", name: "image", widget: "image"}
+          - { label: "description", name: "alt", widget: "string"}
   - name: "medias_fr"
     label: "Medias FR"
     folder: "src/content/medias/fr"
