@@ -2,11 +2,21 @@
 const { data, description } = Astro.props;
 ---
 
-<div class="flex flex-col md:flex-row md:px-20">
-    <img src={data.thumbnail} class="object-cover shrink-0 md:max-h-62.5"/>
-    <div class="md:pl-6">
-        <p class="mb-3">{data.date}</p>
-        <h1 class="text-3xl underline font-balthazar">{data.title}</h1>
+<div class="flex flex-col mb-12 md:flex-row md:px-20">
+    <div class="flex justify-center mb-4">
+        <div class="flex items-center justify-center w-64 h-64 overflow-hidden border bg-toxic-green">
+            <img
+                src={data.thumbnail}
+                class="w-auto h-full"
+            />
+        </div>
+    </div>
+
+    <div class="md:pl-6 flex-2">
+        <p class="md:mb-3">{data.date}</p>
+        <h1 class="text-3xl underline font-balthazar">
+            {data.title}
+        </h1>
         <p class="p-6">{description}</p>
     </div>
 </div>
