@@ -42,3 +42,20 @@
   background-size: 100% 0.35em;
   background-position: 0 85%;
 }
+
+.bullet-point {
+  position: relative;
+  padding-left: 24px;
+  list-style: none;
+}
+
+.bullet-point::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 12px;
+  height: 12px;
+  background-color: #61FF74;
+  transform: translateY(-50%);
+}

@@ -8,7 +8,7 @@ const reviewSchema = z.object({
   date : z.string().optional(),
   title: z.string().optional(),
   author: z.string().optional(),
-  publishedin: z.string().optional()
+  published: z.string().optional()
 
 });
 
