@@ -47,10 +47,15 @@ const academicSchema = z.object({
   tags: z.array(tagSchema).optional()
 });
 
+const collaboratorSchema = z.object({
+  name: z.string()
+})
+
 const collaborationsSchema = z.object({
   title: z.string(),
+  collaborators: z.array(collaboratorSchema),
   time: z.string(),
-  description: z.string(),
+  body: z.string(),
   thumbnail: z.string(),
   thubnailalt: z.string(),
   images: z.array(imagesSchema)
@@ -151,5 +156,7 @@ export const collections = {
   medias_en,
   medias_fr,
   academic_en,
-  academic_fr
+  academic_fr,
+  collaborations_en,
+  collaborations_fr
 };
