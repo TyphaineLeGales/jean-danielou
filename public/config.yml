@@ -35,7 +35,11 @@ collections:
         widget: "list"
         fields:
           - { label: "Review Text", name: "text", widget: "string" }
-          - { label: "Review Link", name: "link", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
+          - { label: "Date", name: "date", widget: "string", required: false}
+          - { label: "Title", name: "title", widget: "string", required: false}
+          - { label: "Author", name: "author", widget: "string",required: false}
+          - { label: "Published in", name: "published", widget: "string", required: false}
       - label: "Images"
         name: "images"
         widget: "list"
@@ -58,6 +62,10 @@ collections:
         fields:
           - { label: "Infos", name: "text", widget: "string" }
           - { label: "Lien", name: "link", widget: "string" }
+          - { label: "Date", name: "date", widget: "string", required: false}
+          - { label: "Titre", name: "title", widget: "string", required: false}
+          - { label: "Autheur", name: "author", widget: "string", required: false}
+          - { label: "Publiée sur", name: "published", widget: "string", required: false}
       - label: "Images"
         name: "images"
         widget: "list"

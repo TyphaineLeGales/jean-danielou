@@ -4,7 +4,12 @@ import { z } from 'astro/zod'
 
 const reviewSchema = z.object({
   text: z.string(),
-  link: z.string().url(),
+  link: z.string(),
+  date : z.string().optional(),
+  title: z.string().optional(),
+  author: z.string().optional(),
+  publishedin: z.string().optional()
+
 });
 
 const bookimagesSchema = z.object({

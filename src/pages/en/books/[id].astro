@@ -12,28 +12,10 @@ export const getStaticPaths = (async() => {
 
     });
 }) satisfies GetStaticPaths;
-import Quit from '../../../components/UI/Quit.astro'
+import BookDetails from '../../../components/book/Details.astro'
 const {book} = Astro.props
 console.log(book)
 ---
 <Layout>
-    <div class="flex py-4 border-b">
-        <Quit/>
-        <h1 class="text-3xl font-balthazar">{book.data.title} </h1>
-        <p>{book.data.date}</p>
-    </div>
-   
-    <slot />
-    <div class="flex flex-col md:flex-row">
-        <div class="flex-1">
-            <div>
-                <img src={book.data.thumbnail}/>
-                {book.data.images?.map(i => <img src={i.image}/>)}
-            </div>
-        </div>
-        <div class="flex-1">
-            <p class="mb-4 font-bold">{book.data.lead}</p>
-            <p>{book.body}</p>
-        </div>
-    </div>
+    <BookDetails book={book}/>
 </Layout>

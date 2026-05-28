@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Book from '../../components/Book.astro'
+import BookList from '../../components/book/List.astro'
 import { getCollection } from 'astro:content';
 const books = await getCollection('books_fr')
 const sortedBooks = books.sort(
@@ -12,7 +12,7 @@ const sortedBooks = books.sort(
     <ul class=" md:pl-20">
         {sortedBooks.map(book => 
         <li class="my-6">
-            <Book data={book.data} description={book.body} id={book.id}/> 
+            <BookList data={book.data} description={book.body} id={book.id}/> 
         </li>)}
     </ul>
 </Layout>
