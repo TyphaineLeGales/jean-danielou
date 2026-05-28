@@ -1,25 +1,35 @@
 ---
+import { imageConfig } from 'astro:assets'
 import Quit from '../../components/UI/Quit.astro'
+import { includes } from 'astro:schema'
 const {book} = Astro.props
 ---
-<div class="flex py-4 border-b">
-        <a href="/books"><Quit/></a>
-        <h1 class="text-3xl font-balthazar">{book.data.title} </h1>
-        <p>{book.data.date}</p>
+<div class="relative" >
+    <div class="relative flex items-center justify-center py-6 border-b">
+        <a href="/books" class="absolute left-0">
+            <Quit />
+        </a>
+        <div class="flex items-center gap-3">
+            <h1 class="text-3xl font-balthazar">
+            {book.data.title}
+            </h1>
+
+            <p>{book.data.date}</p>
+        </div>
     </div>
    
     <slot />
-    <div class="flex flex-col md:flex-row">
-        <div class="flex-1">
-            <div>
-                <img src={book.data.thumbnail}/>
-                {book.data.images?.map(i => <img src={i.image}/>)}
+    <div class="flex flex-col flex-1 md:flex-row">
+        <div class="flex-1 border-r md:mr-2 bg-toxic-green">
+            <div class="flex flex-col items-center">
+                <img src={book.data.thumbnail} />
+                {book.data.images?.map(i => <img src={i.image} alt={i.description}/>)}
             </div>
         </div>
-        <div class="flex-1">
-            <p class="mb-4 font-bold">{book.data.lead}</p>
-            <p>{book.body}</p>
-            <ul class="mt-4">
+        <div class="sticky self-start flex-1 p-6 top-12 text-content">
+            <p class="py-4 mb-4 text-lg font-medium">{book.data.lead}</p>
+            <p class="text-sm ">{book.body}</p>
+            <ul class="mt-12">
                 {book.data.reviews?.map(r => (
                     <li class="mb-4 bullet-point"> 
                         <a href={r.link} target="_blank">
@@ -36,3 +46,4 @@ const {book} = Astro.props
             </ul>
         </div>
     </div>
+</div>
