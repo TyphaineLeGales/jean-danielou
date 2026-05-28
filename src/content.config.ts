@@ -12,7 +12,7 @@ const reviewSchema = z.object({
 
 });
 
-const bookimagesSchema = z.object({
+const imagesSchema = z.object({
   image: z.string(),
   alt: z.string()
 })
@@ -27,7 +27,7 @@ const booksSchema = z.object({
   thumbnail: z.string(),
   lead: z.string(),
   reviews: z.array(reviewSchema).optional(),
-  images: z.array(bookimagesSchema).optional()
+  images: z.array(imagesSchema).optional()
 });
 
 const mediasSchema = z.object({
@@ -46,6 +46,16 @@ const academicSchema = z.object({
   text: z.string(),
   tags: z.array(tagSchema).optional()
 });
+
+const collaborationsSchema = z.object({
+  title: z.string(),
+  time: z.string(),
+  description: z.string(),
+  thumbnail: z.string(),
+  thubnailalt: z.string(),
+  images: z.array(imagesSchema)
+
+})
 
 const landingSchema = z.object({
   catch: z.string(),
@@ -116,6 +126,22 @@ const academic_fr = defineCollection({
   }),
   schema: mediasSchema,
 });
+
+const collaborations_fr = defineCollection({
+  loader: glob({
+    base: './src/content/collaborations/fr',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: collaborationsSchema,
+})
+
+const collaborations_en = defineCollection({
+  loader: glob({
+    base: './src/content/collaborations/fr',
+    pattern: '**/*.{md,mdx}',
+  }),
+  schema: collaborationsSchema,
+})
 
 export const collections = {
   landing_en,
