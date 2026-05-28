@@ -3,7 +3,7 @@ title: Fellings of detchament
 Collaborators:
   - name: Clarisse Pillard
 time: ongoing
-thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-2.png
+thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-4.png
 thumbnailalt: flowers in a factory
 images:
   - image: /images/uploads/reflet_machine_3.jpg
