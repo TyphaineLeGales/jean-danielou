@@ -10,8 +10,13 @@ lead: This book is designed as a guide tracing the aberrant choreography of
 reviews:
   - text: Danielle Tartakowsky, « Notre mondialisation », En attendant Nadeau
     link: https://www.en-attendant-nadeau.fr/2025/12/16/notre-mondialisation/
+    author: Danielle Tartakowsky
+    title: « Notre mondialisation »
+    published: En attendant Nadeau
   - text: Julio Schumacher, revue ETVDES
     link: https://www.revue-etudes.com/critiques-de-livres/incorporated-de-jean-danielou/28365
+    author: Julio Schumacher
+    published: revue ETVDES
 images:
   - image: /images/uploads/incorp_scan_-10.jpeg
     alt: Picture of the inside of the book
