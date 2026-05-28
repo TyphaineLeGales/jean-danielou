@@ -22,7 +22,15 @@ const {book} = Astro.props
             <ul class="mt-4">
                 {book.data.reviews?.map(r => (
                     <li class="mb-2 "> 
-                        <a href={r.link} target="_blank">{r.text}</a>
+                        <a href={r.link} target="_blank">
+                            <p>
+                                <span class="font-light">{r.date}</span>
+                                <span class="font-bold">{r.publishedin}</span>
+                                <span class="text-lg underline font-balthazar">{r.title}</span>
+                                <span class="text-sm font-light">{r.author}</span>
+
+                            </p>
+                        </a>
                     </li>
                 ))}
             </ul>
