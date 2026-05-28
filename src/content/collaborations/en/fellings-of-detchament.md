@@ -1,10 +1,10 @@
 ---
-title: Fellings of detchament
+title: Feelings of detachment
 collaborators:
   - name: Clarisse Pillard
 time: ongoing
-thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-4.png
 thumbnailalt: flowers in a factory
+PDF: /images/uploads/feelings_of_detachment_texte-1-.pdf
 images:
   - image: /images/uploads/reflet_machine_3.jpg
     alt: archives on a wall
