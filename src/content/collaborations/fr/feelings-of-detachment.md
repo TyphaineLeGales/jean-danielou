@@ -3,7 +3,7 @@ title: Feelings of detachment
 Collaborateurices:
   - name: Clarisse Pillard
 time: Ongoing
-thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-2.png
+thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-4.png
 thumbnailalt: Usine de fleurs
 images:
   - image: /images/uploads/reflet_machine_3.jpg
