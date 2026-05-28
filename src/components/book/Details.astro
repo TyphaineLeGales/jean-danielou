@@ -3,7 +3,7 @@ import Quit from '../../components/UI/Quit.astro'
 const {book} = Astro.props
 ---
 <div class="relative" >
-    <div class="flex flex-col items-center self-start justify-center py-6 bg-white border-b md:sticky top-12 md:flex-row">
+    <div class="z-10 flex flex-col items-center self-start justify-center py-6 bg-white border-b md:sticky top-12 md:flex-row">
         <a href="/books" class="absolute top-0 left-0 md:top-auto md:mb-0 p-0.8 md:p-0">
             <Quit />
         </a>
@@ -17,10 +17,24 @@ const {book} = Astro.props
    
     <slot />
     <div class="flex flex-col flex-1 md:flex-row">
-        <div class="flex-1 border-r md:mr-2 bg-toxic-green">
-            <div class="flex flex-col items-center">
+        <div class="flex-1 border border-t-0 md:border-none md:border-r md:mr-2 bg-toxic-green">
+            <!-- <div class="flex flex-col items-center">
                 <img src={book.data.thumbnail} />
                 {book.data.images?.map(i => <img src={i.image} alt={i.description}/>)}
+            </div> -->
+            <div class="flex items-center overflow-x-auto snap-x snap-mandatory md:flex-col md:overflow-visible">
+                <img
+                    src={book.data.thumbnail}
+                    class="w-[95vw] shrink-0 snap-center md:w-auto"
+                />
+
+                {book.data.images?.map(i => (
+                    <img
+                    src={i.image}
+                    alt={i.description}
+                    class="w-[95vw] shrink-0 snap-center md:w-auto"
+                    />
+                ))}
             </div>
         </div>
         <div class="sticky self-start flex-1 p-6 top-30 text-content">
