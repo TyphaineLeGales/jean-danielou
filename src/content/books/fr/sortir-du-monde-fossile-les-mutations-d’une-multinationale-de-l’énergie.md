@@ -61,7 +61,7 @@ reviews:
       philosophies, montre Jean Daniélou, ancien collaborateur des Nouveaux
       Chemins de la connaissance
     link: https://www.lemonde.fr/idees/article/2014/08/27/des-conditions-materielles-de-production-de-la-philo_4477534_3232.html?search-type=classic&ise_click_rank=1
-    date: 27 août 2014 Le Monde
+    date: 27 août 2014
     title: « Des conditions matérielles de production de la philo »
     published: Le Monde
 ---
