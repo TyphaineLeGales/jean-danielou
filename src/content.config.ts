@@ -57,7 +57,8 @@ const collaborationsSchema = z.object({
   time: z.string(),
   thumbnail: z.string(),
   thumbnailalt: z.string(),
-  images: z.array(imagesSchema)
+  images: z.array(imagesSchema),
+  pdf: z.string()
 })
 
 const landingSchema = z.object({

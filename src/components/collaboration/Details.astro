@@ -1,0 +1,40 @@
+---
+import Quit from '../../components/UI/Quit.astro'
+const {collaboration} = Astro.props
+---
+<div class="relative" >
+    <div class="z-10 flex flex-col items-center self-start justify-center py-6 bg-white border-b md:sticky top-12 md:flex-row">
+        <a href="/collaborations" class="absolute top-0 left-0 md:top-auto md:mb-0 p-0.8 md:p-0">
+            <Quit />
+        </a>
+        <div class="flex flex-col items-center gap-3 mt-6 text-center md:text-left md:flex-row md:mt-0">
+            <h1 class="mt-2 text-2xl md:text-3xl font-balthazar">
+                <span>{collaboration.data.title}</span> X <span>{collaboration.data.collaborators?.map(c => c.name)}</span>
+            </h1>
+            <p>{collaboration.data.date}</p>
+        </div>
+    </div>
+   
+    <slot />
+    <div class="flex flex-col flex-1 md:flex-row">
+        <div class="flex-1 border border-t-0 md:border-none md:border-r md:mr-2 bg-toxic-green">
+            <div class="flex items-center overflow-x-auto snap-x snap-mandatory md:flex-col md:overflow-visible">
+                <img
+                    src={collaboration.data.thumbnail}
+                    class="w-[95vw] shrink-0 snap-center md:w-auto"
+                />
+
+                {collaboration.data.images?.map(i => (
+                    <img
+                    src={i.image}
+                    alt={i.description}
+                    class="w-[95vw] shrink-0 snap-center md:w-auto"
+                    />
+                ))}
+            </div>
+        </div>
+        <div class="sticky self-start flex-1 p-6 top-30 text-content">
+            <p class="text-sm ">{collaboration.body}</p>
+        </div>
+    </div>
+</div>
