@@ -140,7 +140,7 @@ const collaborations_fr = defineCollection({
 
 const collaborations_en = defineCollection({
   loader: glob({
-    base: './src/content/collaborations/fr',
+    base: './src/content/collaborations/en',
     pattern: '**/*.{md,mdx}',
   }),
   schema: collaborationsSchema,

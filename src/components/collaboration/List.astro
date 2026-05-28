@@ -3,7 +3,7 @@ const { data, description, id } = Astro.props;
 ---
 
 <a href={`/collaborations/${id}`} class="flex flex-col mb-12 md:flex-row md:px-20">
-    <div class="flex justify-center mb-4 flex-2">
+    <div class="flex justify-center mb-4 ">
         <div class="flex items-center justify-center w-1/2 overflow-hidden border bg-toxic-green">
             <img
                 src={data.thumbnail}
@@ -12,7 +12,7 @@ const { data, description, id } = Astro.props;
         </div>
     </div>
 
-    <div class="flex-1 md:pl-6">
+    <div class="flex-2 md:pl-6">
         <p class="md:mb-3">{data.date}</p>
         <h1 class="text-3xl underline font-balthazar">
             {data.title}
