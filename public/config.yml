@@ -128,8 +128,8 @@ collections:
     create: true
     fields: 
       - { label: "Title", name: "title", widget: string}
-      - label: collaborators
-        name: "Collaborateurices"
+      - label: collaborateurices
+        name: "collaborators"
         widget: "list"
         fields: 
           - {label: "Nom", name: "name", widget: "string"}
@@ -150,7 +150,7 @@ collections:
     fields: 
       - { label: "Title", name: "title", widget: string}
       - label: collaborators
-        name: "Collaborators"
+        name: "collaborators"
         widget: "list"
         fields: 
           - {label: "Name", name: "name", widget: "string"}

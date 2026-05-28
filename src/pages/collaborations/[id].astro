@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+export const getStaticPaths = (async() => {
+    const collaborations = await getCollection('collaborations_fr')
+    return collaborations.map(collab => {
+        return {
+            params: {id: collab.id},
+            props: {collab}
+        }
+
+    });
+}) satisfies GetStaticPaths;
+import CollaborationsDetails from '../../components/collaboration/Details.astro'
+const {collab} = Astro.props
+---
+<Layout>
+    <CollaborationsDetails collab={collab}/>
+</Layout>

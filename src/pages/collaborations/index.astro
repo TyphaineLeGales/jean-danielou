@@ -1,6 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import CollaborationsList from '../../components/collaboration/List.astro'
+import { getCollection } from 'astro:content';
+const collaborations = await getCollection('collaborations_fr')
+// const sortedBooks = books.sort(
+//   (a, b) => Number(b.data.date) - Number(a.data.date)
+// );
 ---
 <Layout>
-	<p>This is the collaboration page</p>
+    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Collaborations</h1>
+    <ul class=" md:pl-20">
+        {collaborations.map(collab => 
+        <li class="my-6">
+            <CollaborationsList data={collab.data} description={collab.body} id={collab.id}/> 
+        </li>)}
+    </ul>
 </Layout>

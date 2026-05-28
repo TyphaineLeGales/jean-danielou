@@ -1,6 +1,6 @@
 ---
 title: Fellings of detchament
-Collaborators:
+collaborators:
   - name: Clarisse Pillard
 time: ongoing
 thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-2.png
