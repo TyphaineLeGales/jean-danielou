@@ -14,7 +14,6 @@ export const getStaticPaths = (async() => {
 }) satisfies GetStaticPaths;
 import BookDetails from '../../../components/book/Details.astro'
 const {book} = Astro.props
-console.log(book)
 ---
 <Layout>
     <BookDetails book={book}/>

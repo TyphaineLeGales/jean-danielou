@@ -13,8 +13,12 @@ const textUI = {
             {text: "mondialisation", highlight: true}
         ],
         selected_en : "Selected work",
-        selected_fr : "Selection de travaux"
+        selected_fr : "Selection de travaux",
+    },
+    collab: {
+        pdf_fr: "Lire le PDF",
+        pdf_en: "Read full PDF",
     }
 }
 
-export const {index} = textUI
+export const {index, collab} = textUI

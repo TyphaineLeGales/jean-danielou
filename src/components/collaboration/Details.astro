@@ -1,6 +1,12 @@
 ---
 import Quit from '../../components/UI/Quit.astro'
+import {collab} from '../../config/UI'
+const lang = Astro.url.pathname.startsWith('/en')
+  ? 'en'
+  : 'fr';
 const {collaboration} = Astro.props
+import { marked } from "marked";
+const lead = marked.parse(collaboration.body);
 ---
 <div class="relative" >
     <div class="z-10 flex flex-col items-center self-start justify-center py-6 bg-white border-b md:sticky top-12 md:flex-row">
@@ -34,7 +40,14 @@ const {collaboration} = Astro.props
             </div>
         </div>
         <div class="sticky self-start flex-1 p-6 top-30 text-content">
-            <p class="text-sm ">{collaboration.body}</p>
+            <Fragment set:html={lead} />
+            <a
+                href={collaboration.data.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                <h2 class="w-full mb-12 text-lg font-semibold text-right uppercase md:text-xl font-lexend highlight-marker"> {collab[`pdf_${lang}`]}</h2>
+            </a>
         </div>
     </div>
 </div>
