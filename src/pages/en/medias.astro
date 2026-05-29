@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Media from '../components/Media.astro'
+import Layout from '../../layouts/Layout.astro';
+import Media from '../../components/Media.astro'
 import { getCollection } from 'astro:content';
 const medias = await getCollection('medias')
-const sorted = medias.filter(b => b.id.startsWith('fr/'))
+const sorted = medias.filter(b => b.id.startsWith('en/'))
   .sort((a, b) => Number(b.data.date) - Number(a.data.date));
 ---
 <Layout>
