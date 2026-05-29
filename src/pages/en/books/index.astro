@@ -2,7 +2,7 @@
 import Layout from '../../../layouts/Layout.astro';
 import Book from '../../../components/Book.astro'
 import { getCollection } from 'astro:content';
-const books = await getCollection('books_en')
+const books = await getCollection('books_fr')
 const sortedBooks = books.sort(
   (a, b) => Number(b.data.date) - Number(a.data.date)
 );

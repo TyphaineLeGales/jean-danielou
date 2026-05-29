@@ -22,6 +22,7 @@ const tagSchema = z.object({
 });
 
 const booksSchema = z.object({
+  id: z.number(),
   title: z.string(),
   date: z.string(),
   thumbnail: z.string(),
@@ -147,6 +148,14 @@ const collaborations_en = defineCollection({
   schema: collaborationsSchema,
 })
 
+const selectedworks = defineCollection({
+  type: 'content',
+  schema: z.object({
+    id: z.number(),
+    type: z.string(),
+  }),
+});
+
 export const collections = {
   landing_en,
   landing_fr,
@@ -157,5 +166,6 @@ export const collections = {
   academic_en,
   academic_fr,
   collaborations_en,
-  collaborations_fr
+  collaborations_fr,
+  selectedworks
 };

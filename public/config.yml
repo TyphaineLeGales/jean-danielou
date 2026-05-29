@@ -5,6 +5,10 @@ backend:
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
+i18n:
+  structure: multiple_folders
+  locales: [en, fr]
+
 collections:
   - name: "landing_en"
     label: "landing EN"
@@ -25,6 +29,7 @@ collections:
     folder: "src/content/books/en"
     create: true
     fields:
+      - { label: "ID", name: "id", widget: "number", required: true }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Year", name: "date", widget: "string" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
@@ -51,6 +56,7 @@ collections:
     folder: "src/content/books/fr"
     create: true
     fields:
+      - { label: "ID", name: "id", widget: "number", required: true }
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Année de publication", name: "date", widget: "string" }
       - { label: "Image", name: "thumbnail", widget: "image" }
@@ -166,4 +172,12 @@ collections:
         fields:
           - { label: "image", name: "image", widget: "image"}
           - { label: "description", name: "alt", widget: "string"}
+  - name: "selectedworks"
+    label: "Selected works"
+    folder: "src/content/selectedworks/"
+    create: true
+    fields:
+      - { label: "ID", name: "id", widget: "number", }
+      - { label : "Type i.e. book, collab ", name: "type", widget: "string"}
+
   

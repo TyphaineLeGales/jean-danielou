@@ -1,4 +1,5 @@
 ---
+id: 2
 title: " Incorporated. Frictions, résidus et affects de la mondialisation"
 date: "2025"
 thumbnail: /images/uploads/incorp_scan_-1.png
