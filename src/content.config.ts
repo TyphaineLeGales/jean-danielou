@@ -1,24 +1,36 @@
-import { defineCollection} from 'astro:content';
+import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { z } from 'astro/zod'
+import { z } from 'astro/zod';
+
+// --- Shared schemas ---
 
 const reviewSchema = z.object({
   text: z.string(),
   link: z.string(),
-  date : z.string().optional(),
+  date: z.string().optional(),
   title: z.string().optional(),
   author: z.string().optional(),
-  published: z.string().optional()
-
+  published: z.string().optional(),
 });
 
 const imagesSchema = z.object({
   image: z.string(),
-  alt: z.string()
-})
+  alt: z.string(),
+});
 
 const tagSchema = z.object({
-  name: z.string().optional()
+  name: z.string().optional(),
+});
+
+const collaboratorSchema = z.object({
+  name: z.string(),
+});
+
+// --- Collection schemas ---
+
+const landingSchema = z.object({
+  catch: z.string(),
+  text: z.string(),
 });
 
 const booksSchema = z.object({
@@ -28,7 +40,7 @@ const booksSchema = z.object({
   thumbnail: z.string(),
   lead: z.string(),
   reviews: z.array(reviewSchema).optional(),
-  images: z.array(imagesSchema).optional()
+  images: z.array(imagesSchema).optional(),
 });
 
 const mediasSchema = z.object({
@@ -45,12 +57,8 @@ const academicSchema = z.object({
   link: z.string().url(),
   publishedon: z.string(),
   text: z.string(),
-  tags: z.array(tagSchema).optional()
+  tags: z.array(tagSchema).optional(),
 });
-
-const collaboratorSchema = z.object({
-  name: z.string()
-})
 
 const collaborationsSchema = z.object({
   title: z.string(),
@@ -59,94 +67,37 @@ const collaborationsSchema = z.object({
   thumbnail: z.string(),
   thumbnailalt: z.string(),
   images: z.array(imagesSchema),
-  pdf: z.string().optional()
-})
+  pdf: z.string().optional(),
+});
 
-const landingSchema = z.object({
-  catch: z.string(),
-  text: z.string()
-})
+// --- Collections ---
+// Each collection now covers both locales under the same folder,
+// matching Decap's multiple_folders i18n structure: <folder>/<locale>/<slug>.md
 
-const landing_en = defineCollection({
-  loader: glob({
-    base: './src/content/landing/en',
-    pattern: '**/*.{md,mdx}'
-  }),
-  schema: landingSchema
-})
+const landing = defineCollection({
+  loader: glob({ base: './src/content/landing', pattern: '**/*.{md,mdx}' }),
+  schema: landingSchema,
+});
 
-const landing_fr = defineCollection({
-  loader: glob({
-    base: './src/content/landing/fr',
-    pattern: '**/*.{md,mdx}'
-  }),
-  schema: landingSchema
-})
-
-
-const books_en = defineCollection({
-  loader: glob({
-    base: './src/content/books/en',
-    pattern: '**/*.{md,mdx}',
-  }),
+const books = defineCollection({
+  loader: glob({ base: './src/content/books', pattern: '**/*.{md,mdx}' }),
   schema: booksSchema,
 });
 
-const books_fr = defineCollection({
-  loader: glob({
-    base: './src/content/books/fr',
-    pattern: '**/*.{md,mdx}',
-  }),
-  schema: booksSchema,
-});
-
-const medias_en = defineCollection({
-  loader: glob({
-    base: './src/content/medias/en',
-    pattern: '**/*.{md,mdx}',
-  }),
+const medias = defineCollection({
+  loader: glob({ base: './src/content/medias', pattern: '**/*.{md,mdx}' }),
   schema: mediasSchema,
 });
 
-const medias_fr = defineCollection({
-  loader: glob({
-    base: './src/content/medias/fr',
-    pattern: '**/*.{md,mdx}',
-  }),
-  schema: mediasSchema,
-});
-
-const academic_en = defineCollection({
-  loader: glob({
-    base: './src/content/academic/en',
-    pattern: '**/*.{md,mdx}',
-  }),
+const academic = defineCollection({
+  loader: glob({ base: './src/content/academic', pattern: '**/*.{md,mdx}' }),
   schema: academicSchema,
 });
 
-const academic_fr = defineCollection({
-  loader: glob({
-    base: './src/content/academic/fr',
-    pattern: '**/*.{md,mdx}',
-  }),
-  schema: mediasSchema,
+const collaborations = defineCollection({
+  loader: glob({ base: './src/content/collaborations', pattern: '**/*.{md,mdx}' }),
+  schema: collaborationsSchema,
 });
-
-const collaborations_fr = defineCollection({
-  loader: glob({
-    base: './src/content/collaborations/fr',
-    pattern: '**/*.{md,mdx}',
-  }),
-  schema: collaborationsSchema,
-})
-
-const collaborations_en = defineCollection({
-  loader: glob({
-    base: './src/content/collaborations/en',
-    pattern: '**/*.{md,mdx}',
-  }),
-  schema: collaborationsSchema,
-})
 
 const selectedworks = defineCollection({
   type: 'content',
@@ -157,15 +108,10 @@ const selectedworks = defineCollection({
 });
 
 export const collections = {
-  landing_en,
-  landing_fr,
-  books_en,
-  books_fr,
-  medias_en,
-  medias_fr,
-  academic_en,
-  academic_fr,
-  collaborations_en,
-  collaborations_fr,
-  selectedworks
+  landing,
+  books,
+  medias,
+  academic,
+  collaborations,
+  selectedworks,
 };
