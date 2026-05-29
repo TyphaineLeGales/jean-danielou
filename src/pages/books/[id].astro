@@ -2,19 +2,20 @@
 import type { GetStaticPaths } from "astro";
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-export const getStaticPaths = (async() => {
-    const books = await getCollection('books_fr')
-    return books.map(book => {
-        return {
-            params: {id: book.id},
-            props: {book}
-        }
+import BookDetails from '../../components/book/Details.astro';
 
-    });
+export const getStaticPaths = (async () => {
+    const books = await getCollection('books');
+    const frBooks = books.filter(b => b.id.startsWith('fr/'));
+
+    return frBooks.map(book => ({
+        params: { id: book.id.replace('fr/', '').normalize('NFC') },
+        props: { book }
+    }));
 }) satisfies GetStaticPaths;
-import BookDetails from '../../components/book/Details.astro'
-const {book} = Astro.props
+
+const { book } = Astro.props;
 ---
 <Layout>
-    <BookDetails book={book}/>
+    <BookDetails book={book} />
 </Layout>

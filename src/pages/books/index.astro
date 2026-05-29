@@ -6,7 +6,7 @@ const books = await getCollection('books')
 const sortedBooks = books
   .filter(b => b.id.startsWith('fr/'))
   .sort((a, b) => Number(b.data.date) - Number(a.data.date));
-const slugNames = sortedBooks.map(book => book.id.slice(3))
+const slugNames = sortedBooks.map(book => book.id.slice(3).normalize('NFC'))
   console.log(sortedBooks[0].id)
   console.log(slugNames)
 ---

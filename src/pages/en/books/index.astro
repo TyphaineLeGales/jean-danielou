@@ -7,15 +7,13 @@ const sortedBooks = books
   .filter(b => b.id.startsWith('en/'))
   .sort((a, b) => Number(b.data.date) - Number(a.data.date));
 const slugNames = sortedBooks.map(book => book.id.slice(3))
-  console.log(sortedBooks[0].id)
-  console.log(slugNames)
 ---
 <Layout>
     <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Books</h1>
     <ul class=" md:pl-20">
         {sortedBooks.map((book, i) => 
         <li class="my-6">
-            <BookList data={book.data} description={book.body} id={slugNames[i]}/> 
+            <BookList data={book.data} description={book.body} id={slugNames[i]} lang="en"/> 
         </li>)}
     </ul>
 </Layout>

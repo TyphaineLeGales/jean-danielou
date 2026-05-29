@@ -13,8 +13,8 @@ const reviewSchema = z.object({
 });
 
 const imagesSchema = z.object({
-  image: z.string(),
-  alt: z.string(),
+  image: z.string().optional(),
+  alt: z.string().optional(),
 });
 
 const tagSchema = z.object({

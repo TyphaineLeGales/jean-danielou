@@ -1,10 +1,11 @@
 ---
 import Quit from '../../components/UI/Quit.astro'
-const {book} = Astro.props
+const { book, lang} = Astro.props;
+const href = lang === 'en' ? `/en/books` : `/books`;
 ---
 <div class="relative" >
     <div class="z-10 flex flex-col items-center self-start justify-center py-6 bg-white border-b md:sticky top-12 md:flex-row">
-        <a href="/books" class="absolute top-0 left-0 md:top-auto md:mb-0 p-0.8 md:p-0">
+        <a href={href} class="absolute top-0 left-0 md:top-auto md:mb-0 p-0.8 md:p-0">
             <Quit />
         </a>
         <div class="flex flex-col items-center gap-3 mt-6 text-center md:text-left md:flex-row md:mt-0">
