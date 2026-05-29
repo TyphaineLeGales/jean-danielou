@@ -5,7 +5,6 @@ import { z } from 'astro/zod';
 // --- Shared schemas ---
 
 const reviewSchema = z.object({
-  text: z.string(),
   link: z.string(),
   date: z.string().optional(),
   title: z.string().optional(),

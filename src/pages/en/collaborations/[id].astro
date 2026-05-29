@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 export const getStaticPaths = (async() => {
-    const collaborations = await getCollection('collaborations_en')
+    const collaborations = await getCollection('collaborations')
     return collaborations.map(collab => {
         return {
             params: {id: collab.id},

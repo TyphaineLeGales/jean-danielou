@@ -35,6 +35,7 @@ collections:
       - label: "Reviews"
         name: "reviews"
         widget: "list"
+        # i18n: true - use the same one from fr
         fields:
           - { label: "Link", name: "link", widget: "string" }
           - { label: "Date", name: "date", widget: "string", required: false }
@@ -44,6 +45,7 @@ collections:
       - label: "Images"
         name: "images"
         widget: "list"
+        # i18n: true - use the same one from fr
         fields:
           - { label: "Image", name: "image", widget: "image"}
           - { label: "Description", name: "alt", widget: "string" }
