@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import Academic from '../components/Academic.astro'
 import { getCollection } from 'astro:content';
-const academics = await getCollection('academic_fr')
-const sorted = academics.sort(
+const academics = await getCollection('academic')
+
+const sorted = academics.filter(a => a.id.includes("fr/"))
+.sort(
   (a, b) => Number(b.data.date) - Number(a.data.date)
 );
 ---

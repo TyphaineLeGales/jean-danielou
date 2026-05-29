@@ -101,8 +101,10 @@ const collaborations = defineCollection({
 const selectedworks = defineCollection({
   type: 'content',
   schema: z.object({
-    id: z.number(),
+    title: z.string(),
     type: z.string(),
+    link: z.string(),
+    date: z.string(),
   }),
 });
 
