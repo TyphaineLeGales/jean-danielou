@@ -98,8 +98,8 @@ const collaborations = defineCollection({
   schema: collaborationsSchema,
 });
 
-const selectedworks = defineCollection({
-  type: 'content',
+const selected = defineCollection({
+  loader: glob({ base: './src/content/academic', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     type: z.string(),
@@ -114,5 +114,5 @@ export const collections = {
   medias,
   academic,
   collaborations,
-  selectedworks,
+  selected,
 };

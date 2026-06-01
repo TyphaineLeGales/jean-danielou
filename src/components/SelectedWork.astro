@@ -3,18 +3,23 @@ import ListItem from '../components/ListItem.vue';
 import {recentWork }from '../config/dummyData'
 const {lang} = Astro.props
 import { index } from '../config/UI';
+import { getCollection } from 'astro:content';
+const selected = await getCollection('selected');
+const sorted = selected.filter(e => e.id.includes(`${lang}/`))
 ---
 <div class="lg:w-[calc(100%-var(--spacing)*24)] mt-4 bg-white">
 		<h2 class="w-full mb-12 text-2xl font-semibold text-right uppercase md:text-5xl font-lexend page-header"> 
             {index[`selected_${lang}`]}
         </h2>
 		<ul class="w-full">
-			{recentWork.map(e =><li class="px-2 bg-white border-b md:px-4 first:border-t">
-				<span class="flex justify-between w-full text-xs md:text-sm">
-					<p class="font-light uppercase font-lexend">{e.type}</p>
-					<p class="pr-4 text-right">{e.year}</p>
-				</span>
-				<ListItem text={e.title} client:visible/>
+			{sorted.map(e =><li class="px-2 bg-white border-b md:px-4 first:border-t">
+				<a href={e.data.link}>
+					<span class="flex justify-between w-full text-xs md:text-sm">
+						<p class="font-light uppercase font-lexend">{e.data.type}</p>
+						<p class="pr-4 text-right">{e.data.date}</p>
+					</span>
+				</a>
+				<ListItem text={e.data.title} client:visible/>
 			</li>)}
 		</ul>
 	</div>
