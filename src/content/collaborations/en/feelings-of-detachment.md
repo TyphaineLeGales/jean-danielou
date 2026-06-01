@@ -16,3 +16,4 @@ images:
   - image: /images/uploads/reflet_machine_3.jpg
     alt: archives on a wall in the exhibition
 ---
+Clarisse Pillard, a multidisciplinary artist, and Jean Daniélou, a sociologist, are combining their archives and work in the Reflet Machine collective space this March to explore and make tangible fragments of global choreographies collected from around the world, from the Philippines to Mexico, via Rungis and the Netherlands. Using documents and images gathered from the places where these bodies circulate, Clarisse Pillard and Jean Daniélou blur the market ontologies that establish the order of things, opening up the troubled space of their creation.

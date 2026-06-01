@@ -93,6 +93,8 @@ collections:
         i18n: true
         fields:
           - { label: "Name", name: "name", widget: "string" }
+          - { label: "Role", name: "role", widget: "string", i18n: true}
+          - { label: "Link", name: "link", widget: "string", i18n: true}
       - { label: "Time status", name: "time", widget: "string", i18n: duplicate }
       - { label: "Lead", name: "lead", widget: text, i18n: true}
       - { label: "Description", name: "body", widget: "markdown", i18n: true }
