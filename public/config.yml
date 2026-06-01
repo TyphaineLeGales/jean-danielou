@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: TyphaineLeGales/jean-danielou
-  branch: update-multilanguage-structure
+  branch: main
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 # publish_mode: editorial_workflow
