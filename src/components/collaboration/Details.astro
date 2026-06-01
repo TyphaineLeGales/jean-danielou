@@ -40,16 +40,24 @@ const body = marked.parse(collaboration.body);
                 ))}
             </div>
         </div>
-        <div class="sticky self-start flex-1 p-6 top-30 text-content">
-            <Fragment set:html={lead} />
-            <Fragment set:html={body} />
-            <a
-                href={collaboration.data.pdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                <h2 class="w-full mb-12 text-lg font-semibold text-right uppercase md:text-xl font-lexend highlight-marker"> {collab[`pdf_${lang}`]}</h2>
-            </a>
+        <div class="sticky self-start flex-1 p-6 top-30 text-content min-h-[75vh]">
+            <div class="py-4 mb-4 text-lg font-medium">
+                <Fragment set:html={lead} />
+            </div>
+            <div class="text-sm">
+                <Fragment set:html={body} />
+            </div>
+            <div class="mt-4">
+                <a
+                    href={collaboration.data.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <h2 class="w-full mb-12 text-lg font-semibold text-right uppercase md:text-xl font-lexend highlight-marker">
+                        {collab[`pdf_${lang}`]}
+                    </h2>
+                </a>
+            </div>
         </div>
     </div>
 </div>

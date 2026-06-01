@@ -9,7 +9,7 @@ const sortedBooks = books
 const slugNames = sortedBooks.map(book => book.id.slice(3))
 ---
 <Layout>
-    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Books</h1>
+    <h1 class="my-24 font-semibold uppercase text3xl md:text-5xl font-lexend page-header">Books</h1>
     <ul class=" md:pl-20">
         {sortedBooks.map((book, i) => 
         <li class="my-6">
