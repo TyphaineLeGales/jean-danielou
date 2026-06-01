@@ -99,7 +99,7 @@ const collaborations = defineCollection({
 });
 
 const selected = defineCollection({
-  loader: glob({ base: './src/content/academic', pattern: '**/*.{md,mdx}' }),
+  loader: glob({ base: './src/content/selected', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
     type: z.string(),
