@@ -1,0 +1,26 @@
+name: Batch Merge CMS PRs
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type "merge" to confirm batch merge of all CMS PRs'
+        required: true
+
+jobs:
+  batch-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Merge all PRs with "cms" in title or branch
+        if: github.event.inputs.confirm == 'merge'
+        run: |
+          # Fetch all open PRs with "cms" in title or headRefName (branch)
+          PRS=$(gh pr list --state open --json number,title,headRefName --jq '.[] | select(.title | ascii_downcase | contains("cms") or .headRefName | ascii_downcase | contains("cms")) | .number')
+          for PR in $PRS; do
+            gh pr merge $PR --merge --auto
+          done
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
