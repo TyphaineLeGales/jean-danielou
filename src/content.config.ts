@@ -67,6 +67,7 @@ const collaborationsSchema = z.object({
   thumbnailalt: z.string(),
   images: z.array(imagesSchema),
   pdf: z.string().optional(),
+  lead: z.string()
 });
 
 // --- Collections ---

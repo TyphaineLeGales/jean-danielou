@@ -1,5 +1,7 @@
 ---
 const { data, description, id } = Astro.props;
+import {marked} from "marked"
+const text = marked.parse(description)
 ---
 
 <a href={`/collaborations/${id}`} class="flex flex-col mb-12 md:flex-row md:px-20">
@@ -15,8 +17,10 @@ const { data, description, id } = Astro.props;
     <div class="flex-2 md:pl-6">
         <p class="md:mb-3">{data.date}</p>
         <h1 class="text-3xl underline font-balthazar">
-            {data.title}
+            {data.title} x {data.collaborators.map(c => c.name)}
         </h1>
-        <p class="p-6">{description}</p>
+        <div class="p-6">
+            <Fragment set:html={text}/>
+        </div>
     </div>
 </a>

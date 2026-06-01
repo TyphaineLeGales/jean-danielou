@@ -3,10 +3,11 @@ import type { GetStaticPaths } from "astro";
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 export const getStaticPaths = (async() => {
-    const collaborations = await getCollection('collaborations_fr')
-    return collaborations.map(collab => {
+    const collaborations = await getCollection('collaborations')
+    const sorted = collaborations.filter(a => a.id.includes("fr/"))
+    return sorted.map(collab => {
         return {
-            params: {id: collab.id},
+            params: {id: collab.id.replace('fr/', '').normalize('NFC')},
             props: {collab}
         }
 

@@ -94,6 +94,7 @@ collections:
         fields:
           - { label: "Name", name: "name", widget: "string" }
       - { label: "Time status", name: "time", widget: "string", i18n: duplicate }
+      - { label: "Lead", name: "lead", widget: text, i18n: true}
       - { label: "Description", name: "body", widget: "markdown", i18n: true }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", i18n: duplicate }
       - { label: "Thumbnail alt", name: "thumbnailalt", widget: "string", i18n: true }
