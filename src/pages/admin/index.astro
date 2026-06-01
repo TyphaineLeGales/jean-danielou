@@ -7,6 +7,16 @@
     <title>Content Manager</title>
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script>
+      window.initCMS({
+        config: {},
+      });
+    </script>
+
+  <link href="/config.yml" type="text/yaml" rel="cms-config-url" />
   </body>
 </html>
