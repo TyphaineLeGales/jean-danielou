@@ -10,18 +10,20 @@ on:
 jobs:
   batch-merge:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB975419C
+          sudo apt-add-repository https://cli.github.com/packages
+          sudo apt update
+          sudo apt install gh -y
+
       - name: Checkout repo
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4
 
       - name: Merge all PRs with "cms" in title or branch
         if: github.event.inputs.confirm == 'merge'
         run: |
-          # Install GitHub CLI
-          sudo apt-get install -y gh
-          # Fetch all open PRs with "cms" in title or headRefName (branch)
           PRS=$(gh pr list --state open --json number,title,headRefName --jq '.[] | select(.title | ascii_downcase | contains("cms") or .headRefName | ascii_downcase | contains("cms")) | .number')
           for PR in $PRS; do
             gh pr merge $PR --merge --auto
