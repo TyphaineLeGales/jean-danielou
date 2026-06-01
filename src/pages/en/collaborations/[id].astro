@@ -4,9 +4,10 @@ import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 export const getStaticPaths = (async() => {
     const collaborations = await getCollection('collaborations')
-    return collaborations.map(collab => {
+    const sorted = collaborations.filter(a => a.id.includes("en/"))
+    return sorted.map(collab => {
         return {
-            params: {id: collab.id},
+            params: {id: collab.id.replace('en/', '').normalize('NFC')},
             props: {collab}
         }
 
