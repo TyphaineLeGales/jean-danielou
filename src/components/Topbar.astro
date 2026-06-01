@@ -19,5 +19,5 @@ const { lang } = Astro.props;
     ))}
     <LanguageSwitcher/>
   </ul>
-  <MobileMenuIsland client:media="(max-width: 768px)" class="md:hidden"/>
+  <MobileMenuIsland client:media="(max-width: 768px)" class="md:hidden" lang={lang}/>
 </nav>
