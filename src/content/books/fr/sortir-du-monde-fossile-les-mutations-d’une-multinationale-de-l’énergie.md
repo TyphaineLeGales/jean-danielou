@@ -1,5 +1,5 @@
 ---
-id: 1
+id: 0
 title: "Sortir du monde fossile : Les mutations d’une multinationale de l’énergie"
 date: "2024"
 thumbnail: /images/uploads/book2.png

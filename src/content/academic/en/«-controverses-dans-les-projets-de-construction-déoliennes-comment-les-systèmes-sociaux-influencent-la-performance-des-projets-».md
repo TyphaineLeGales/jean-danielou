@@ -24,4 +24,6 @@ text: The energy industry strives to address a number of challenges—satisfy
   within communities, including letters to editors, internet newsletters, and
   public meetings. From this analysis, policy recommendations are provided for
   energy project sponsors to better anticipate and mitigate conflict.
+tags:
+  - name: Energy Policy
 ---

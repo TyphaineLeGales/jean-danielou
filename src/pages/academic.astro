@@ -2,13 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import Academic from '../components/Academic.astro'
 import { getCollection } from 'astro:content';
-const academics = await getCollection('academic_fr')
-const sorted = academics.sort(
+const academics = await getCollection('academic')
+
+const sorted = academics.filter(a => a.id.includes("fr/"))
+.sort(
   (a, b) => Number(b.data.date) - Number(a.data.date)
 );
 ---
 <Layout>
-    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">
+    <h1 class="my-24 text-3xl font-semibold uppercase md:text-5xl font-lexend page-header">
 		Academic
 	</h1>
     <ul class="md:px-20">

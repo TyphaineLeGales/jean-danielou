@@ -1,6 +1,6 @@
 ---
-title: « Une question de style. À propos des relations entre littérature et
-  sciences sociales »
+title: « Une question de style. À propos des relations entre littérature et
+  sciences sociales »
 date: 23 juillet 2025
 link: https://aoc.media/opinion/2025/07/22/une-question-de-style-a-propos-des-relations-entre-litterature-et-sciences-sociales/
 publishedon: Analyse Opinion Critique

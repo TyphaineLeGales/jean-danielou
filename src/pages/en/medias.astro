@@ -2,12 +2,13 @@
 import Layout from '../../layouts/Layout.astro';
 import Media from '../../components/Media.astro'
 import { getCollection } from 'astro:content';
-const medias = await getCollection('medias_en')
+const medias = await getCollection('medias')
+const sorted = medias.filter(b => b.id.startsWith('en/')).reverse();
 ---
 <Layout>
-    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Medias</h1>
-    <ul class="px-20">
-        {medias.map(media => 
+    <h1 class="my-12 text-3xl font-semibold uppercase md:text-5xl md:my-24 font-lexend page-header">Medias</h1>
+    <ul class="md:px-20">
+        {sorted.map(media => 
         <li class="my-6">
             <Media data={media.data} description={media.body}/> 
         </li>)}

@@ -12,6 +12,4 @@ text: This chapter explores how an energy company develops and implements
   between corporate entities and stakeholders, leading to major transformations
   in the way corporate entities assume a political role when delivering the
   infrastructures of the energy transition.
-tags:
-  - text: Stakeholder management
 ---

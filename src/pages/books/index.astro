@@ -2,17 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 import BookList from '../../components/book/List.astro'
 import { getCollection } from 'astro:content';
-const books = await getCollection('books_fr')
-const sortedBooks = books.sort(
-  (a, b) => Number(b.data.date) - Number(a.data.date)
-);
+const books = await getCollection('books')
+const sortedBooks = books
+  .filter(b => b.id.startsWith('fr/'))
+  .sort((a, b) => Number(b.data.date) - Number(a.data.date));
+const slugNames = sortedBooks.map(book => book.id.slice(3).normalize('NFC'))
 ---
 <Layout>
-    <h1 class="my-24 text-5xl font-semibold uppercase font-lexend page-header">Books</h1>
+    <h1 class="my-24 text-3xl font-semibold uppercase md:text-5xl font-lexend page-header">Books</h1>
     <ul class=" md:pl-20">
-        {sortedBooks.map(book => 
+        {sortedBooks.map((book, i) => 
         <li class="my-6">
-            <BookList data={book.data} description={book.body} id={book.id}/> 
+            <BookList data={book.data} description={book.body} id={slugNames[i]}/> 
         </li>)}
     </ul>
 </Layout>

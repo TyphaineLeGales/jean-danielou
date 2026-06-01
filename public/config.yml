@@ -1,183 +1,122 @@
 backend:
   name: github
   repo: TyphaineLeGales/jean-danielou
-  branch: main
+  branch: update-multilanguage-structure
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
+# publish_mode: editorial_workflow
 
 i18n:
   structure: multiple_folders
-  locales: [en, fr]
+  locales: [fr, en]
+  default_locale: fr
 
 collections:
-  - name: "landing_en"
-    label: "landing EN"
-    folder: "src/content/landing/en"
+  - name: "landing"
+    label: "Landing"
+    folder: "src/content/landing"
     create: false
-    fields: 
-      - {label: "Catch phrase", name: "catch", widget: "string"}
-      - { label: "Text", name: "text", widget: "markdown"}
-  - name: "landing_fr"
-    label: "landing FR"
-    folder: "src/content/landing/fr"
-    create: false
-    fields: 
-      - {label: "Phrase d'accroche", name: "catch", widget: "string"}
-      - { label: "Text", name: "text", widget: "markdown"}
-  - name: "books_en"
-    label: "Books EN"
-    folder: "src/content/books/en"
-    create: true
+    i18n: true
     fields:
-      - { label: "ID", name: "id", widget: "number", required: true }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Year", name: "date", widget: "string" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image" }
-      - { label: "Catch phrase", name: "lead", widget: "text" }
-      - { label: "Excerpt", name: "body", widget: "markdown" }
+      - { label: "Catch phrase", name: "catch", widget: "string", i18n: true }
+      - { label: "Text", name: "text", widget: "markdown", i18n: true }
+
+  - name: "books"
+    label: "Books"
+    folder: "src/content/books"
+    create: true
+    i18n: true
+    fields:
+      - { label: "ID", name: "id", widget: "number", required: true, i18n: duplicate }
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Publish Year", name: "date", widget: "string", i18n: duplicate }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", i18n: duplicate }
+      - { label: "Catch phrase", name: "lead", widget: "text", i18n: true }
+      - { label: "Excerpt", name: "body", widget: "markdown", i18n: true }
       - label: "Reviews"
         name: "reviews"
         widget: "list"
+        # i18n: true - use the same one from fr
         fields:
-          - { label: "Review Text", name: "text", widget: "string" }
           - { label: "Link", name: "link", widget: "string" }
-          - { label: "Date", name: "date", widget: "string", required: false}
-          - { label: "Title", name: "title", widget: "string", required: false}
-          - { label: "Author", name: "author", widget: "string",required: false}
-          - { label: "Published in", name: "published", widget: "string", required: false}
+          - { label: "Date", name: "date", widget: "string", required: false }
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Author", name: "author", widget: "string", required: false }
+          - { label: "Published in", name: "published", widget: "string", required: false }
       - label: "Images"
         name: "images"
         widget: "list"
+        # i18n: true - use the same one from fr
         fields:
-          - { label: "image", name: "image", widget: "image"}
-          - { label: "description", name: "alt", widget: "string"}
-  - name: "books_fr"
-    label: "Books FR"
-    folder: "src/content/books/fr"
+          - { label: "Image", name: "image", widget: "image"}
+          - { label: "Description", name: "alt", widget: "string" }
+
+  - name: "medias"
+    label: "Medias"
+    folder: "src/content/medias"
     create: true
+    i18n: true
     fields:
-      - { label: "ID", name: "id", widget: "number", required: true }
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Année de publication", name: "date", widget: "string" }
-      - { label: "Image", name: "thumbnail", widget: "image" }
-      - {label: "Phrase d'accroche", name: "lead", widget: "text" }
-      - { label: "Extrait", name: "body", widget: "markdown" }
-      - label: "Recensions"
-        name: "reviews"
-        widget: "list"
-        fields:
-          - { label: "Infos", name: "text", widget: "string" }
-          - { label: "Lien", name: "link", widget: "string" }
-          - { label: "Date", name: "date", widget: "string", required: false}
-          - { label: "Titre", name: "title", widget: "string", required: false}
-          - { label: "Autheur", name: "author", widget: "string", required: false}
-          - { label: "Publiée sur", name: "published", widget: "string", required: false}
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        fields:
-          - { label: "image", name: "image", widget: "image"}
-          - { label: "description", name: "alt", widget: "string"}
-  - name: "medias_fr"
-    label: "Medias FR"
-    folder: "src/content/medias/fr"
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Date", name: "date", widget: "string", i18n: duplicate }
+      - { label: "Link", name: "link", widget: "string", i18n: duplicate }
+      - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
+      - { label: "Description", name: "text", widget: "string", i18n: true }
+
+  - name: "academic"
+    label: "Academic"
+    folder: "src/content/academic"
     create: true
+    i18n: true
     fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "string" }
-      - { label: "Lien", name: "link", widget: "string" }
-      - { label: "Publié sur", name: "publishedon", widget: "string" }
-      - { label: "Description", name: "text", widget: "string" }
-  - name: "medias_en"
-    label: "Medias EN"
-    folder: "src/content/medias/en"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "string" }
-      - { label: "Link", name: "link", widget: "string" }
-      - { label: "Published on", name: "publishedon", widget: "string" }
-      - { label: "Description", name: "text", widget: "string" }
-  - name: "academic_fr"
-    label: "Academic FR"
-    folder: "src/content/academic/fr"
-    create: true
-    fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "string" }
-      - { label: "Lien", name: "link", widget: "string" }
-      - { label: "Publié sur", name: "publishedon", widget: "string" }
-      - { label: "Description", name: "text", widget: "string" }
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Date", name: "date", widget: "string", i18n: duplicate }
+      - { label: "Link", name: "link", widget: "string", i18n: duplicate }
+      - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
+      - { label: "Description", name: "text", widget: "string", i18n: true }
       - label: "Tags"
         name: "tags"
         widget: "list"
-        fields:
-          - { label: "Name", name: "text", widget: "string" }
-  - name: "academic_en"
-    label: "Academic EN"
-    folder: "src/content/academic/en"
-    create: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Date", name: "date", widget: "string" }
-      - { label: "Link", name: "link", widget: "string" }
-      - { label: "Published on", name: "publishedon", widget: "string" }
-      - { label: "Description", name: "text", widget: "string" }
-      - label: "Tags"
-        name: "tags"
-        widget: "list"
+        i18n: true
         fields:
           - { label: "Name", name: "name", widget: "string" }
-  - name: "collaborations_fr"
-    label: "Collaborations FR"
-    folder: "src/content/collaborations/fr"
-    create: true
-    fields: 
-      - { label: "Title", name: "title", widget: string}
-      - label: collaborateurices
-        name: "collaborators"
-        widget: "list"
-        fields: 
-          - {label: "Nom", name: "name", widget: "string"}
-      - { label: "Time status", name: "time", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown"}
-      - { label: "Thumbnail", name: "thumbnail", widget: "image"}
-      - { label: "Thumbnail alt", name: "thumbnailalt", widget: "string"}
-      - { label: "PDF", name: "pdf", widget: "file", required: false}
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        fields:
-          - { label: "image", name: "image", widget: "image"}
-          - { label: "description", name: "alt", widget: "string"}
-  - name: "collaborations_en"
-    label: "Collaborations EN"
-    folder: "src/content/collaborations/en"
-    create: true
-    fields: 
-      - { label: "Title", name: "title", widget: string}
-      - label: collaborators
-        name: "collaborators"
-        widget: "list"
-        fields: 
-          - {label: "Name", name: "name", widget: "string"}
-      - { label: "Time status", name: "time", widget: "string" }
-      - { label: "Description", name: "body", widget: "markdown"}
-      - { label: "Thumbnail", name: "thumbnail", widget: "image"}
-      - { label: "Thumbnail alt", name: "thumbnailalt", widget: "string"}
-      - { label: "PDF", name: "pdf", widget: "file", required: false}
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        fields:
-          - { label: "image", name: "image", widget: "image"}
-          - { label: "description", name: "alt", widget: "string"}
-  - name: "selectedworks"
-    label: "Selected works"
-    folder: "src/content/selectedworks/"
-    create: true
-    fields:
-      - { label: "ID", name: "id", widget: "number", }
-      - { label : "Type i.e. book, collab ", name: "type", widget: "string"}
 
-  
+  - name: "collaborations"
+    label: "Collaborations"
+    folder: "src/content/collaborations"
+    create: true
+    i18n: true
+    fields:
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - label: "Collaborators"
+        name: "collaborators"
+        widget: "list"
+        i18n: true
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Role", name: "role", widget: "string", i18n: true}
+          - { label: "Link", name: "link", widget: "string", i18n: true}
+      - { label: "Time status", name: "time", widget: "string", i18n: duplicate }
+      - { label: "Lead", name: "lead", widget: text, i18n: true}
+      - { label: "Description", name: "body", widget: "markdown", i18n: true }
+      - { label: "Thumbnail", name: "thumbnail", widget: "image", i18n: duplicate }
+      - { label: "Thumbnail alt", name: "thumbnailalt", widget: "string", i18n: true }
+      - { label: "PDF", name: "pdf", widget: "file", required: false, i18n: duplicate }
+      - label: "Images"
+        name: "images"
+        widget: "list"
+        i18n: true
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "alt", widget: "string" }
+
+  - name: "selected works"
+    label: "selected"
+    folder: "src/content/selected"
+    create: true
+    i18n: true
+    fields: 
+    - { label: "Title", name: "title", widget: "string", i18n: true}
+    - {label: "link", name: "link", widget: "string", i18n: duplicate}
+    - {label: "Type - book, collab etc...", name: "type", i18n: true}
+    - {label: "Date", name: "date", widget: "string", i18n: duplicate}

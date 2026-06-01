@@ -4,14 +4,10 @@ import About from '../../components/About.astro';
 import SelectedWork from '../../components/SelectedWork.astro';
 import { marked } from "marked";
 import { getCollection } from 'astro:content';
-const landing = await getCollection('landing_en')
-const content = marked.parse(landing[0].data.text);
-const currentPath = Astro.url.pathname;
-const isEnglish = currentPath.startsWith('/en');
-const lang = isEnglish ? "en" : "fr"
+const landing = await getCollection('landing');
+const content = marked.parse(landing.filter(b => b.id.startsWith('en/'))[0].data.text);
 ---
-
 <Layout>
-	<About content={content} lang={lang}/>
-	<SelectedWork lang={lang}/>
+	<About content={content} lang="en"/>
+	<SelectedWork lang="en"/>
 </Layout>
