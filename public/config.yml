@@ -4,6 +4,7 @@ backend:
   branch: update-multilanguage-structure
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
+# publish_mode: editorial_workflow
 
 i18n:
   structure: multiple_folders
@@ -110,7 +111,7 @@ collections:
           - { label: "Description", name: "alt", widget: "string" }
 
   - name: "selected works"
-    label: "selected works"
+    label: "selected"
     folder: "src/content/selected"
     create: true
     i18n: true
