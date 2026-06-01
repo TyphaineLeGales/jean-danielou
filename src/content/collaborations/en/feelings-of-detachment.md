@@ -2,6 +2,8 @@
 title: Feelings of detachment
 collaborators:
   - name: Clarisse Pillard
+    role: Visual artist
+    link: https://clarissepillard.com/
 time: Ongoing
 lead: >-
   _________ Oil, tea, sugar, tobacco, wood, orchids… 
