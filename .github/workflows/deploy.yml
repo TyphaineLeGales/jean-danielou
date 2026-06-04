@@ -1,59 +1,53 @@
-name: Build and Deploy to Infomaniak
+name: Build and Deploy to Infomaniak (SSH)
 
 on:
   push:
     branches:
       - main
+    paths:
+      - "src/**"
+      - "public/**"
+      - "astro.config.*"
+      - "package.json"
+      - "pnpm-lock.yaml"
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      # 1. Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2. Setup Node (Astro requires 22+)
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 22.12
+          cache: "pnpm"
 
-      - name: Enable Corepack
-        run: corepack enable
-
+      # 3. Setup pnpm
       - name: Enable pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
 
+      # 4. Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Get pnpm store path
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-
-      - name: Setup pnpm cache
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-
-      - name: Build Astro site
+      # 5. Build Astro site
+      - name: Build site
         run: pnpm build
 
-      - name: Remove admin from production build
-        run: rm -rf dist/admin
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      # 6. Deploy via rsync over SSH
+      - name: Deploy to Infomaniak (rsync)
+        uses: burnett01/rsync-deployments@7.0.1
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: /sites/jeandanielou.com/
-          dangerous-clean-slate: false
-          sync-state: true
+          switches: -avzr --delete --quiet
+          path: dist/
+          remote_path: /sites/jeandanielou.com/
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
