@@ -47,13 +47,20 @@ jobs:
       - name: Remove admin from production build
         run: rm -rf dist/admin
 
-       # 7. Deploy via rsync SSH
-      - name: Deploy to Infomaniak
+      - name: Test SSH connection
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519 g917ds_Typhaine@g917ds.ftp.infomaniak.com echo "SSH works!"
+      - name: Deploy to Infomaniak via Rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
           switches: -avzr --delete
-          path: dist/
-          remote_path: /sites/jeandanielou.com/
-          remote_host: ${{ secrets.SSH_HOST }}
-          remote_user: ${{ secrets.SSH_USER }}
-          remote_key: ${{ secrets.SSH_KEY }}
+          path: ./
+          remote_path: /your/target/path/
+          remote_host: g917ds.ftp.infomaniak.com
+          remote_user: g917ds_Typhaine
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          remote_port: 22
+          rsh: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
