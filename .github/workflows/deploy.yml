@@ -56,11 +56,11 @@ jobs:
       - name: Deploy to Infomaniak via Rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
-          switches: -avzr --delete
-          path: ./
-          remote_path: /your/target/path/
+          switches: -avzr
+          path: ./dist/
+          remote_path: /sites/jeandanielou.com/
           remote_host:  ${{ secrets.SSH_HOST }}
-          remote_key: ${{ secrets.SSH_NAME }}
+          remote_user: ${{ secrets.SSH_NAME }}
           remote_key: ${{ secrets.SSH_KEY }}
           remote_port: 22
           rsh: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
