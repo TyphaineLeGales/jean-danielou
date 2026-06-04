@@ -1,4 +1,4 @@
-name: Build and Deploy to Infomaniak (SSH)
+name: Build and Deploy to Infomaniak
 
 on:
   push:
@@ -10,37 +10,44 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      # 2. Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.12
-          cache: "pnpm"
+          node-version: 22
 
-      # 3. Enable pnpm (IMPORTANT: must be BEFORE install)
-      - name: Install pnpm
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Enable pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
-          run_install: false
 
-      # 4. Verify pnpm exists (debug step - safe to remove later)
-      - name: Check pnpm
-        run: pnpm -v
-
-      # 5. Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # 6. Build Astro site
-      - name: Build site
+      - name: Get pnpm store path
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Build Astro site
         run: pnpm build
 
-      # 7. Deploy via rsync SSH
+      - name: Remove admin from production build
+        run: rm -rf dist/admin
+
+       # 7. Deploy via rsync SSH
       - name: Deploy to Infomaniak
         uses: burnett01/rsync-deployments@7.0.1
         with:
