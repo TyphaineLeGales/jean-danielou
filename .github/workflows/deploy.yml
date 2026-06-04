@@ -59,8 +59,8 @@ jobs:
           switches: -avzr --delete
           path: ./
           remote_path: /your/target/path/
-          remote_host: g917ds.ftp.infomaniak.com
-          remote_user: g917ds_Typhaine
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          remote_host:  ${{ secrets.SSH_HOST }}
+          remote_key: ${{ secrets.SSH_NAME }}
+          remote_key: ${{ secrets.SSH_KEY }}
           remote_port: 22
           rsh: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
