@@ -63,7 +63,7 @@ jobs:
         with:
           switches: -avzr
           path: ./dist/
-          remote_path: /sites/jeandanielou.com/
+          remote_path: ~/sites/jeandanielou.com
           remote_host:  ${{ secrets.SSH_HOST }}
           remote_user: ${{ secrets.SSH_NAME }}
           remote_key: ${{ secrets.SSH_KEY }}
