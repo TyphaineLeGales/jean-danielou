@@ -46,13 +46,18 @@ jobs:
 
       - name: Remove admin from production build
         run: rm -rf dist/admin
-
+      
       - name: Test SSH connection
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
+          printf '%s\n' "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519 ${{secrets.SSH_HOST}} echo "SSH works!"
+          ssh-keygen -y -f ~/.ssh/id_ed25519
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            -i ~/.ssh/id_ed25519 \
+            ${{ secrets.SSH_NAME }}@${{ secrets.SSH_HOST }} echo "SSH works!"
+
+     
       - name: Deploy to Infomaniak via Rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
