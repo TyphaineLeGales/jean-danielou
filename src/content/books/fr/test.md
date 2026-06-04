@@ -3,6 +3,6 @@ id: 3
 title: test
 date: "2026"
 thumbnail: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-4.png
-lead: test
+lead: test si on fait une modif a un item existant
 ---
 test
