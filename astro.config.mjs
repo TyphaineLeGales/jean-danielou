@@ -18,4 +18,5 @@ export default defineConfig({
   },
 
   integrations: [vue()],
+  output: 'static',
 });
