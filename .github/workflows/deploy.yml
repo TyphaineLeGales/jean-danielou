@@ -50,9 +50,9 @@ jobs:
       - name: Test SSH connection
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519 g917ds_Typhaine@g917ds.ftp.infomaniak.com echo "SSH works!"
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -i ~/.ssh/id_ed25519 ${{secrets.SSH_HOST}} echo "SSH works!"
       - name: Deploy to Infomaniak via Rsync
         uses: burnett01/rsync-deployments@7.0.1
         with:
