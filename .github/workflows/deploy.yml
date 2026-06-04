@@ -4,12 +4,6 @@ on:
   push:
     branches:
       - main
-    paths:
-      - "src/**"
-      - "public/**"
-      - "astro.config.*"
-      - "package.json"
-      - "pnpm-lock.yaml"
 
 jobs:
   deploy:
@@ -20,32 +14,37 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Setup Node (Astro requires 22+)
+      # 2. Setup Node
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22.12
           cache: "pnpm"
 
-      # 3. Setup pnpm
-      - name: Enable pnpm
+      # 3. Enable pnpm (IMPORTANT: must be BEFORE install)
+      - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
+          run_install: false
 
-      # 4. Install dependencies
+      # 4. Verify pnpm exists (debug step - safe to remove later)
+      - name: Check pnpm
+        run: pnpm -v
+
+      # 5. Install dependencies
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      # 5. Build Astro site
+      # 6. Build Astro site
       - name: Build site
         run: pnpm build
 
-      # 6. Deploy via rsync over SSH
-      - name: Deploy to Infomaniak (rsync)
+      # 7. Deploy via rsync SSH
+      - name: Deploy to Infomaniak
         uses: burnett01/rsync-deployments@7.0.1
         with:
-          switches: -avzr --delete --quiet
+          switches: -avzr --delete
           path: dist/
           remote_path: /sites/jeandanielou.com/
           remote_host: ${{ secrets.SSH_HOST }}
