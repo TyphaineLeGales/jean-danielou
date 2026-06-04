@@ -1,5 +1,5 @@
 ---
-catch: J’enquête sur les infrastructures énergétiques et la mondialisation test 2
+catch: J’enquête sur les infrastructures énergétiques et la mondialisation
 text: >-
   Docteur en sociologie des sciences et des techniques (STS), je suis chercheur
   associé au Centre de sociologie de l'innovation de l'École des Mines de
