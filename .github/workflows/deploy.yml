@@ -68,4 +68,3 @@ jobs:
           remote_user: ${{ secrets.SSH_NAME }}
           remote_key: ${{ secrets.SSH_KEY }}
           remote_port: 22
-          rsh: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
