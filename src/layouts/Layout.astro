@@ -45,6 +45,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Balthazar&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Jean Daniélou",
+			"url": "https://jeandanielou.com",
+			"jobTitle": "Sociologue",
+			"affiliation": "Mines Paris-PSL",
+			"sameAs": [
+				"https://www.csi.minesparis.psl.eu/equipe/chercheurs-associes/jean-danielou/",
+				"https://aoc.media/auteur/jean-danielouaoc-media/",
+				"https://www.pressesdesmines.com/author-book/danielou/",
+				"https://metropolitiques.eu/_Danielou-Jean_.html"
+			]
+		})} />
 		<!-- <ClientRouter /> -->
 	</head>
 	<body>
