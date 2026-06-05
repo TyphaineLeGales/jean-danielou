@@ -29,7 +29,7 @@ const frPath = computed(() => {
 </script>
 
 <template>
-  <nav class="language-switcher">
+  <li class="language-switcher">
     <a
       :href="frPath"
       :aria-current="!isEnglish ? 'page' : undefined"
@@ -45,7 +45,7 @@ const frPath = computed(() => {
     >
       EN
     </a>
-  </nav>
+  </li>
 </template>
 
 <style scoped>
