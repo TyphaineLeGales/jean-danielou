@@ -104,7 +104,7 @@ collections:
         widget: "list"
         i18n: true
         fields: 
-          - {label: "Type of work", name: "type", widget: "string", i18n: true}
+          - {label: "Type of work", name: "name", widget: "string", i18n: true}
       - { label: "Description", name: "body", widget: "markdown", i18n: true }
       - { label: "Thumbnail", name: "thumbnail", widget: "image", i18n: duplicate }
       - { label: "Thumbnail alt", name: "thumbnailalt", widget: "string", i18n: true }
@@ -126,7 +126,7 @@ collections:
     fields: 
       - { label: "Title", name: "title", widget: "string", i18n: true}
       - {label: "link", name: "link", widget: "string", i18n: duplicate}
-      - {label: "Type - book, collab etc...", name: "type", i18n: true}
+      - {label: "Type - book, collab etc...", name: "name", i18n: true}
       - {label: "Date", name: "date", widget: "string", i18n: duplicate}
 
   - name: "CV"

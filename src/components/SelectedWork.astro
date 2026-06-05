@@ -5,9 +5,10 @@ import { index } from '../config/UI';
 import { getCollection } from 'astro:content';
 const selected = await getCollection('selected');
 const sorted = selected.filter(e => e.id.includes(`${lang}/`))
+import Tags from './Tags.astro';
 
 ---
-<div class="lg:w-[calc(100%-var(--spacing)*24)] mt-4 bg-white">
+<div class="w-full mt-4 bg-white">
 		<h2 class="w-full mb-12 text-2xl font-semibold text-right uppercase md:text-5xl font-lexend page-header"> 
             {index[`selected_${lang}`]}
         </h2>
@@ -15,7 +16,7 @@ const sorted = selected.filter(e => e.id.includes(`${lang}/`))
 			{sorted.map(e =><li class="px-2 bg-white border-b md:px-4 first:border-t">
 				<a href={e.data.link} target="_blank">
 					<span class="flex justify-between w-full text-xs md:text-sm">
-						 <p class="px-2 mt-2 text-xs font-light uppercase border w-fit">{e.data.type}</p>
+						 <Tags tags={e.data.name}>
 						<p class="pr-4 text-right">{e.data.date}</p>
 					</span>
 					<ListItem text={e.data.title} client:visible/>

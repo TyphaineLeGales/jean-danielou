@@ -102,7 +102,7 @@ const selected = defineCollection({
   loader: glob({ base: './src/content/selected', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
     title: z.string(),
-    type: z.string(),
+    name: z.string(),
     link: z.string(),
     date: z.string(),
   }),
