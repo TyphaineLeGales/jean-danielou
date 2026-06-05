@@ -47,7 +47,7 @@ const body = marked.parse(collaboration.body);
             <div class="text-sm">
                 <Fragment set:html={body} />
             </div>
-            <div class="mt-4">
+            {collaboration.data.pdf && <div class="mt-4">
                 <a
                     href={collaboration.data.pdf}
                     target="_blank"
@@ -57,7 +57,7 @@ const body = marked.parse(collaboration.body);
                         {collab[`pdf_${lang}`]}
                     </h2>
                 </a>
-            </div>
+            </div>}
         </div>
     </div>
 </div>
