@@ -1,3 +1,4 @@
+local_backend: true
 backend:
   name: git-gateway
   repo: TyphaineLeGales/jean-danielou
@@ -5,6 +6,7 @@ backend:
   squash_merges: true
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
+site_url: https://jean-danielou.netlify.app
 
 
 i18n:
@@ -117,14 +119,15 @@ collections:
     create: true
     i18n: true
     fields: 
-    - { label: "Title", name: "title", widget: "string", i18n: true}
-    - {label: "link", name: "link", widget: "string", i18n: duplicate}
-    - {label: "Type - book, collab etc...", name: "type", i18n: true}
-    - {label: "Date", name: "date", widget: "string", i18n: duplicate}
+      - { label: "Title", name: "title", widget: "string", i18n: true}
+      - {label: "link", name: "link", widget: "string", i18n: duplicate}
+      - {label: "Type - book, collab etc...", name: "type", i18n: true}
+      - {label: "Date", name: "date", widget: "string", i18n: duplicate}
 
   - name: "CV"
     label: "CV"
     folder: "src/content/cv"
     create: true
     fields: 
-    - { label: "CV", name: "CV", widget: "file" }
+      - { label: "title", name: "title", widget: "string"}
+      - { label: "pdf document", name: "pdf", widget: "file" }
