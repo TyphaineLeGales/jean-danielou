@@ -124,6 +124,7 @@ collections:
 
   - name: "CV"
     label: "CV"
+    folder: "src/content/cv"
     create: true
     fields: 
     - { label: "CV", name: "CV", widget: "file" }
