@@ -1,6 +1,6 @@
 ---
 title: Incorporated. Frictions, résidus et affects de la mondialisation
 link: /books/incorporated-frictions-residus-et-affects-de-la-mondialisation/
-type: Livre
+name: Livre
 date: "2025"
 ---

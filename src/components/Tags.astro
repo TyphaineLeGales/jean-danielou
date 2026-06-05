@@ -1,8 +1,9 @@
 ---
 const {tags} = Astro.props
+const t = typeof tags === 'string' ? [{name: tags}] : tags
 ---
 <div class="flex"> 
-    {tags.map(t => t.name && <p class="px-2 my-2 ml-2 text-xs font-light uppercase border md:my-4 md:text-lg first:ml-0 w-fit p-0!">
-        {t.name || t.type}
+    {t.map(tag => tag.name && <p class="p-0! px-2! mt-2 ml-2 text-xs font-light uppercase border md:text-lg first:ml-0 w-fit">
+        {tag.name}
     </p>)}
 </div>

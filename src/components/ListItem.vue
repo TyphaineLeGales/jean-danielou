@@ -18,7 +18,7 @@
     <component
       :is="tag"
       v-else
-      class="text-xl truncate md:text-3xl font-balthazar"
+      class="p-0 text-xl truncate md:text-3xl font-balthazar"
     >
       {{ text }}
     </component>
