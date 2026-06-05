@@ -64,10 +64,14 @@
   text-decoration-color: #61FF74;
 }
 
+p {
+  padding-block:0 !important;
+}
+
 h2 {
   @apply text-2xl uppercase
 }
 
 p {
-  @apply py-2
+  @apply py-2;
 }
