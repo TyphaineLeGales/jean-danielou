@@ -63,3 +63,7 @@
 .styled-link {
   text-decoration-color: #61FF74;
 }
+
+h2 {
+  @apply text-2xl
+}

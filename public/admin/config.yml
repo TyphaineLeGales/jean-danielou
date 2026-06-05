@@ -8,7 +8,6 @@ media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 site_url: https://jean-danielou.netlify.app
 
-
 i18n:
   structure: multiple_folders
   locales: [fr, en]
