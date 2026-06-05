@@ -127,7 +127,7 @@ collections:
   - name: "CV"
     label: "CV"
     folder: "src/content/cv"
-    create: true
+    create: false
     fields: 
       - { label: "title", name: "title", widget: "string"}
       - { label: "pdf document", name: "pdf", widget: "file" }
