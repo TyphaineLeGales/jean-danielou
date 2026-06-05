@@ -109,6 +109,13 @@ const selected = defineCollection({
   }),
 });
 
+const cv = defineCollection({
+  loader: glob({base: './src/content/cv', pattern: '**/*.{md,mdx}'}),
+  schema: z.object({
+    pdf: z.string(),
+  })
+})
+
 export const collections = {
   landing,
   books,
@@ -116,4 +123,5 @@ export const collections = {
   academic,
   collaborations,
   selected,
+  cv
 };
