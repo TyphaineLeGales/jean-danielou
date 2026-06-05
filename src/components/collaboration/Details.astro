@@ -42,10 +42,7 @@ const body = marked.parse(collaboration.body);
             <div class="py-4 mb-4 text-lg font-medium">
                 <Fragment set:html={lead} />
             </div>
-            <div class="text-sm">
-                <Fragment set:html={body} />
-            </div>
-            {collaboration.data.pdf && <div class="mt-4">
+             {collaboration.data.pdf && <div class="mt-4">
                 <a
                     href={collaboration.data.pdf}
                     target="_blank"
@@ -56,6 +53,10 @@ const body = marked.parse(collaboration.body);
                     </h2>
                 </a>
             </div>}
+            <div class="text-sm">
+                <Fragment set:html={body} />
+            </div>
+           
         </div>
     </div>
 </div>

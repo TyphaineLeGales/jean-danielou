@@ -65,5 +65,9 @@
 }
 
 h2 {
-  @apply text-2xl
+  @apply text-2xl uppercase
+}
+
+p {
+  @apply py-2
 }
