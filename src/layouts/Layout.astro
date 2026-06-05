@@ -51,7 +51,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			"name": "Jean Daniélou",
 			"url": "https://jeandanielou.com",
 			"jobTitle": "Sociologue",
-			"affiliation": "Mines Paris-PSL",
+			"description": "Sociologue des sciences et des techniques, chercheur associé au Centre de sociologie de l'innovation de Mines Paris-PSL. Spécialiste des infrastructures énergétiques et de la mondialisation.",
+			"affiliation": {
+				"@type": "Organization",
+				"name": "Centre de Sociologie de l'Innovation, Mines Paris-PSL"
+			},
+			"alumniOf": "Mines Paris-PSL",
+			"knowsAbout": ["sociologie", "infrastructures énergétiques", "mondialisation"],
+			"birthDate": "1990",
 			"sameAs": [
 				"https://www.csi.minesparis.psl.eu/equipe/chercheurs-associes/jean-danielou/",
 				"https://aoc.media/auteur/jean-danielouaoc-media/",

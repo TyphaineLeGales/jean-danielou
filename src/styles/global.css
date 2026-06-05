@@ -59,3 +59,7 @@
   background-color: #61FF74;
   transform: translateY(-50%);
 }
+
+.styled-link {
+  text-decoration-color: #61FF74;
+}

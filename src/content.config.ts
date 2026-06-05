@@ -59,20 +59,19 @@ const academicSchema = z.object({
   tags: z.array(tagSchema).optional(),
 });
 
+
 const collaborationsSchema = z.object({
   title: z.string(),
-  collaborators: z.array(collaboratorSchema),
-  time: z.string(),
+  link: z.string(),
+  lead: z.string(),
+  tags: z.array(tagSchema).optional(),
   thumbnail: z.string(),
   thumbnailalt: z.string(),
   images: z.array(imagesSchema),
   pdf: z.string().optional(),
-  lead: z.string()
 });
 
 // --- Collections ---
-// Each collection now covers both locales under the same folder,
-// matching Decap's multiple_folders i18n structure: <folder>/<locale>/<slug>.md
 
 const landing = defineCollection({
   loader: glob({ base: './src/content/landing', pattern: '**/*.{md,mdx}' }),

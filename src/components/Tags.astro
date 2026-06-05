@@ -1,0 +1,8 @@
+---
+const {tags} = Astro.props
+---
+<div class="flex"> 
+    {tags.map(t => t.name && <p class="px-2 my-2 ml-2 text-xs font-light uppercase border md:my-4 md:text-lg first:ml-0 w-fit">
+        {t.name}
+    </p>)}
+</div>

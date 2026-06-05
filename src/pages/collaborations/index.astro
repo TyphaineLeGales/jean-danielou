@@ -12,7 +12,7 @@ const slugNames = sorted.map(collab => slugify(collab.id.slice(3)))
     <ul class=" xl:pl-20">
         {sorted.map((collab, i) => 
         <li class="my-6">
-            <CollaborationsList data={collab.data} description={collab.body} id={slugNames[i]}/> 
+            <CollaborationsList data={collab.data} lead={collab.body} id={slugNames[i]}/> 
         </li>)}
     </ul>
 </Layout>
