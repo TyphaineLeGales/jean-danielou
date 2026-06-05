@@ -4,12 +4,13 @@ import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import BookDetails from '../../../components/book/Details.astro';
 import { enrichBookWithFrData } from '../../../utils/fullBookInfo';
+import { slugify } from '../../../utils/slugify.js';
 
 export const getStaticPaths = (async () => {
     const books = await getCollection('books');
     const enBooks = books.filter(b => b.id.startsWith('en/'));
     return enBooks.map(book => ({
-        params: { id: book.id.replace('en/', '').normalize('NFC') },
+        params: { id: slugify(book.id.replace('en/', '')) },
         props: { book }
     }));
 }) satisfies GetStaticPaths;

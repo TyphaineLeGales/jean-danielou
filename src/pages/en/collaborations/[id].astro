@@ -2,12 +2,13 @@
 import type { GetStaticPaths } from "astro";
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { slugify } from '../../../utils/slugify.js';
 export const getStaticPaths = (async() => {
     const collaborations = await getCollection('collaborations')
     const sorted = collaborations.filter(a => a.id.includes("en/"))
     return sorted.map(collab => {
         return {
-            params: {id: collab.id.replace('en/', '').normalize('NFC')},
+            params: {id: slugify(collab.id.replace('en/', ''))},
             props: {collab}
         }
 

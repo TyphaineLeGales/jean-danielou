@@ -1,5 +1,6 @@
 ---
-const { data, description, id, lang} = Astro.props;
+const { data, description, id, lang, slug} = Astro.props;
+console.log("book slug", slug)
 const href = lang === 'en' ? `/en/books/${id}` : `/books/${id}`;
 ---
 

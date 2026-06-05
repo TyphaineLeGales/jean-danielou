@@ -1,10 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import CollaborationsList from '../../components/collaboration/List.astro'
+import { slugify } from '../../utils/slugify.js';
 import { getCollection } from 'astro:content';
 const collaborations = await getCollection('collaborations')
 const sorted = collaborations.filter(a => a.id.includes("fr/"))
-const slugNames = sorted.map(collab => collab.id.slice(3).normalize('NFC'))
+const slugNames = sorted.map(collab => slugify(collab.id.slice(3)))
 ---
 <Layout>
     <h1 class="my-24 text-3xl font-semibold uppercase md:text-5xl font-lexend page-header">Collaborations</h1>

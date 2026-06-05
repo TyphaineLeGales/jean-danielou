@@ -1,12 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import BookList from '../../components/book/List.astro'
+import { slugify } from '../../utils/slugify.js';
 import { getCollection } from 'astro:content';
 const books = await getCollection('books')
 const sortedBooks = books
   .filter(b => b.id.startsWith('fr/'))
   .sort((a, b) => Number(b.data.date) - Number(a.data.date));
-const slugNames = sortedBooks.map(book => book.id.slice(3).normalize('NFC'))
+
+const slugNames = sortedBooks.map(book => slugify(book.id.slice(3)))
 ---
 <Layout>
     <h1 class="my-24 text-3xl font-semibold uppercase md:text-5xl font-lexend page-header">Books</h1>
