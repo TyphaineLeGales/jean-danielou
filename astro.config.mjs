@@ -19,4 +19,5 @@ export default defineConfig({
 
   integrations: [vue()],
   output: 'static',
+  site: 'https://jeandanielou.com',
 });

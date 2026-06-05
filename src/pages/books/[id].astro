@@ -3,7 +3,6 @@ import type { GetStaticPaths } from "astro";
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import BookDetails from '../../components/book/Details.astro';
-
 import { slugify } from '../../utils/slugify.js';
 
 export const getStaticPaths = (async () => {
@@ -17,7 +16,8 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { book } = Astro.props;
+const metaTitle = "Jean Daniélou - " + book.data.title
 ---
-<Layout>
+<Layout description={book.data.lead} image={book.data.thumbnail} title={metaTitle} >
     <BookDetails book={book} />
 </Layout>

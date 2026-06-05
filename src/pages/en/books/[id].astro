@@ -17,7 +17,8 @@ export const getStaticPaths = (async () => {
 
 const { book } = Astro.props;
 const enrichedBook = await enrichBookWithFrData(book);
+const metaTitle = "Jean Daniélou - " + book.data.title
 ---
-<Layout>
+<Layout description={book.data.lead} image={book.data.thumbnail} title={metaTitle}>
     <BookDetails book={enrichedBook}/>
 </Layout>
