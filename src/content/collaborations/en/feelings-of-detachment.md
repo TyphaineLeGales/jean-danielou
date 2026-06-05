@@ -23,15 +23,8 @@ images:
   - image: /images/uploads/reflet_machine_3.jpg
     alt: archives on a wall in the exhibition
 ---
-## Feelings of detachment
-
-*9-15 march 2026* 
-
-Residency a Reflet Machine, *10 rue des écouffes, Paris 4*
-
-
-“Oil, tea, sugar, tobacco, wood, orchids… How should we look at globalization? How can we learn to see the global chains that put to work, discipline, and circulate around the world the bodies we consume en masse? How can we go beyond the smooth, shiny surface of the finished products that capitalism offers us on its shelves to trace the labyrinthine circuits that encircle the Earth and where the substances of our lives are formed?”
-
 
 
 ![Residency poster](/images/uploads/capture-d’écran-2026-06-05-à-15.11.26.png "Residency poster")
+
+“Oil, tea, sugar, tobacco, wood, orchids… How should we look at globalization? How can we learn to see the global chains that put to work, discipline, and circulate around the world the bodies we consume en masse? How can we go beyond the smooth, shiny surface of the finished products that capitalism offers us on its shelves to trace the labyrinthine circuits that encircle the Earth and where the substances of our lives are formed?”
