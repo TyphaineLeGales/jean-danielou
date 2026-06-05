@@ -119,7 +119,6 @@ collections:
 
   - name: "selected works"
     label: "selected"
-    slug: "{{fields.slug}}"
     folder: "src/content/selected"
     create: true
     i18n: true
