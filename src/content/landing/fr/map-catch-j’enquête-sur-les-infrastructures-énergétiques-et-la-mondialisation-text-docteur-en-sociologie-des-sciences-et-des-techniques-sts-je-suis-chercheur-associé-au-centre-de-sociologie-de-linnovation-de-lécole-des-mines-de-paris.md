@@ -1,5 +1,7 @@
 ---
-catch: J’enquête sur les infrastructures énergétiques et la mondialisation
+catch: J’enquête sur les infrastructures énergétiques et la mondialisation  je
+  suis chercheur associé au Centre de sociologie de l'innovation de l'École des
+  Mines de Paris. 
 text: >-
   Docteur en sociologie des sciences et des techniques (STS), je suis chercheur
   associé au Centre de sociologie de l'innovation de l'École des Mines de
