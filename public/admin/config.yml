@@ -19,7 +19,7 @@ collections:
     folder: "src/content/landing"
     create: false
     i18n: true
-    slug: "{{fields.slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Catch phrase", name: "catch", widget: "string", i18n: true }
       - { label: "Text", name: "text", widget: "markdown", i18n: true }
@@ -29,7 +29,6 @@ collections:
     folder: "src/content/books"
     create: true
     i18n: true
-    slug: "{{fields.id}}"
     fields:
       - { label: "ID", name: "id", widget: "number", required: true, i18n: duplicate }
       - { label: "Title", name: "title", widget: "string", i18n: true }
@@ -125,7 +124,7 @@ collections:
     fields: 
       - { label: "Title", name: "title", widget: "string", i18n: true}
       - {label: "link", name: "link", widget: "string", i18n: duplicate}
-      - {label: "Type - book, collab etc...", name: "name", i18n: true}
+      - {label: "Type - book, collab etc...", name: "name", widget: "string", i18n: true}
       - {label: "Date", name: "date", widget: "string", i18n: duplicate}
 
   - name: "CV"
