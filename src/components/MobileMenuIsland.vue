@@ -1,7 +1,7 @@
 <template>
   <div :class="{ 'menu-open': menuOpen }">
     <IconBurgerMenu :open="menuOpen" @click="toggleMenuOpen" class="mt-2 size-12"/>
-    <MobileMenu :open="menuOpen" :lang="lang" client:load />
+    <MobileMenu :open="menuOpen" :lang="lang" client:load @close="closeMenu"/>
   </div>
 </template>
 <script setup>
@@ -15,6 +15,9 @@
   })
   const menuOpen = ref(false)
   const toggleMenuOpen =()=> menuOpen.value = !menuOpen.value
+  const closeMenu = () => {
+  menuOpen.value = false
+}
 
   watch(menuOpen, (isOpen) => {
   document.body.style.overflow = isOpen ? 'hidden' : ''
