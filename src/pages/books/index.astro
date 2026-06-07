@@ -11,7 +11,9 @@ const sortedBooks = books
 const slugNames = sortedBooks.map(book => slugify(book.id.slice(3)))
 ---
 <Layout>
-    <h1 class="my-24 text-3xl font-semibold uppercase md:text-5xl font-lexend page-header">Books</h1>
+    <h1 class="my-24 text-3xl font-semibold uppercase md:text-5xl font-lexend page-header">
+        Livres
+    </h1>
     <ul class=" md:px-20">
         {sortedBooks.map((book, i) => 
         <li class="my-6">

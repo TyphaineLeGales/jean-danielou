@@ -18,7 +18,8 @@ const textUI = {
     collab: {
         pdf_fr: "Lire le PDF",
         pdf_en: "Read full PDF",
-    }
+    },
+   
 }
 
 export const {index, collab} = textUI

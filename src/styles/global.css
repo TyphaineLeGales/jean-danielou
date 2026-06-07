@@ -35,6 +35,18 @@
   z-index:-1;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  .page-header {
+    padding-bottom: 5px; /* Smaller padding on mobile */
+  }
+
+  .page-header::after {
+    height: 14px; /* Thinner underline on mobile */
+    bottom: 3px; /* Adjust position if needed */
+  }
+}
+
 .highlight-marker {
   display: inline;
   background-image: linear-gradient(#61FF74, #61FF74);
