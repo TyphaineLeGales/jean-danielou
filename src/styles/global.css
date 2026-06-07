@@ -35,15 +35,15 @@
   z-index:-1;
 }
 
-/* Mobile styles */
+
 @media (max-width: 768px) {
   .page-header {
-    padding-bottom: 5px; /* Smaller padding on mobile */
+    padding-bottom: 5px; 
   }
 
   .page-header::after {
-    height: 14px; /* Thinner underline on mobile */
-    bottom: 3px; /* Adjust position if needed */
+    height: 14px; 
+    bottom: 3px;
   }
 }
 
