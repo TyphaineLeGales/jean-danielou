@@ -5,7 +5,7 @@
   </div>
 </template>
 <script setup>
-  import {ref} from 'vue'
+  import {ref, watch} from 'vue'
   import IconBurgerMenu from './UI/IconBurgerMenu.vue';
   import MobileMenu from './MobileMenu.vue';
   const props= defineProps({
@@ -15,4 +15,8 @@
   })
   const menuOpen = ref(false)
   const toggleMenuOpen =()=> menuOpen.value = !menuOpen.value
+
+  watch(menuOpen, (isOpen) => {
+  document.body.style.overflow = isOpen ? 'hidden' : ''
+})
 </script>
