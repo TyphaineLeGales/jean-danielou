@@ -1,7 +1,10 @@
 ---
 catch: J’enquête sur les infrastructures énergétiques et la mondialisation  je
   suis chercheur associé au Centre de sociologie de l'innovation de l'École des
-  Mines de Paris. 
+  Mines de Paris.  Mon premier livre, Sortir du monde fossile, décrit la manière
+  dont les compagnies pétro-gazières se déplacent à travers le monde pour
+  s’approprier les ressources naturelles, implanter des infrastructures et
+  produire différentes formes de mondialisation. 
 text: >-
   Docteur en sociologie des sciences et des techniques (STS), je suis chercheur
   associé au Centre de sociologie de l'innovation de l'École des Mines de
