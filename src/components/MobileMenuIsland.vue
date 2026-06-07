@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{ 'menu-open': menuOpen }">
     <IconBurgerMenu :open="menuOpen" @click="toggleMenuOpen" class="mt-2 size-12"/>
     <MobileMenu :open="menuOpen" :lang="lang" client:load />
   </div>

@@ -45,6 +45,15 @@
     height: 14px; 
     bottom: 3px;
   }
+
+  nav {
+    background-color: #61FF74;
+    transition: all 0.25s ease-out
+  }
+
+  nav:has(.menu-open) {
+    background: white;
+  }
 }
 
 .highlight-marker {
