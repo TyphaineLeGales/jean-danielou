@@ -17,7 +17,7 @@ import Tags from './Tags.astro';
 				<a href={e.data.link} target="_blank">
 					<span class="flex justify-between w-full text-xs md:text-sm">
 						 <Tags tags={e.data.name}/>
-						<p class="pr-4 text-right">{e.data.date}</p>
+						<p class="text-right">{e.data.date}</p>
 					</span>
 					<ListItem text={e.data.title} client:visible/>
 				</a>
