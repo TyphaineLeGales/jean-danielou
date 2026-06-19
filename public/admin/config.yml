@@ -64,6 +64,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Slug", name: "slug", widget: "slug", i18n: duplicate, default: "{{title}}", required: false, hidden: true }
       - { label: "Date", name: "date", widget: "string", i18n: duplicate }
       - { label: "Link", name: "link", widget: "string", i18n: duplicate }
       - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
@@ -77,6 +78,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Slug", name: "slug", widget: "slug", i18n: duplicate, default: "{{title}}", required: false, hidden: true }
       - { label: "Date", name: "date", widget: "string", i18n: duplicate }
       - { label: "Link", name: "link", widget: "string", i18n: duplicate }
       - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
