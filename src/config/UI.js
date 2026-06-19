@@ -4,7 +4,7 @@ const textUI = {
             { text: "I enquire on" },
             { text: "energy infrastructures", highlight: true },
             { text: "and"},
-            { text: "globalisation", highlight: true }
+            { text: "globalization", highlight: true }
         ],
         title_fr: [
             { text: "J’enquête sur les"},
