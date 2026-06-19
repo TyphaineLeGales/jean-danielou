@@ -63,10 +63,10 @@ collections:
     i18n: true
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true, required: true }
-      - { label: "Date", name: "date", widget: "string", i18n: duplicate }
-      - { label: "Link", name: "link", widget: "string", i18n: duplicate }
+      - { label: "Date", name: "date", widget: "string", i18n: duplicate, required: true }
+      - { label: "Link", name: "link", widget: "string", i18n: duplicate, required: true }
       - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
-      - { label: "Description", name: "text", widget: "string", i18n: true }
+      - { label: "Description", name: "text", widget: "string", i18n: true, required: true }
 
   - name: "academic"
     label: "Academic"
@@ -75,10 +75,10 @@ collections:
     i18n: true
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true, required: true } 
-      - { label: "Date", name: "date", widget: "string", i18n: duplicate }
-      - { label: "Link", name: "link", widget: "string", i18n: duplicate }
+      - { label: "Date", name: "date", widget: "string", i18n: duplicate, required: true }
+      - { label: "Link", name: "link", widget: "string", i18n: duplicate, required: true}
       - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
-      - { label: "Description", name: "text", widget: "string", i18n: true }
+      - { label: "Description", name: "text", widget: "string", i18n: true, required: true }
       - label: "Tags"
         name: "tags"
         widget: "list"
