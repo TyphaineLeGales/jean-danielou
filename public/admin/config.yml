@@ -61,7 +61,7 @@ collections:
     folder: "src/content/medias"
     create: true
     i18n: true
-    slug: "{{fields.slug}}"
+   
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Date", name: "date", widget: "string", i18n: duplicate }
@@ -74,7 +74,7 @@ collections:
     folder: "src/content/academic"
     create: true
     i18n: true
-    slug: "{{fields.slug}}"
+
     fields:
       - { label: "Title", name: "title", widget: "string", i18n: true }
       - { label: "Date", name: "date", widget: "string", i18n: duplicate }
