@@ -1,5 +1,5 @@
 ---
-catch: I inquire on energy infrastructures and globalization
+catch: Research action research creation
 text: >-
   I hold a PhD in science and technology studies (STS), and I am a research
   associate at the Center for the Sociology of Innovation, École des Mines,
