@@ -63,7 +63,7 @@ collections:
     i18n: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Title", name: "title", widget: "string", i18n: true, required: true }  # <-- Make title required
       - { label: "Slug", name: "slug", widget: "slug", i18n: duplicate, default: "{{title}}", required: false, hidden: true }
       - { label: "Date", name: "date", widget: "string", i18n: duplicate }
       - { label: "Link", name: "link", widget: "string", i18n: duplicate }
@@ -77,7 +77,7 @@ collections:
     i18n: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Title", name: "title", widget: "string", i18n: true, required: true }  # <-- Make title required
       - { label: "Slug", name: "slug", widget: "slug", i18n: duplicate, default: "{{title}}", required: false, hidden: true }
       - { label: "Date", name: "date", widget: "string", i18n: duplicate }
       - { label: "Link", name: "link", widget: "string", i18n: duplicate }
