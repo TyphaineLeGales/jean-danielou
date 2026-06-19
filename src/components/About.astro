@@ -1,25 +1,18 @@
 ---
 import {index} from '../config/UI'
 
-const {content, lang} = Astro.props
+const {data, lang} = Astro.props
+import { marked } from "marked";
 import compo1 from '../assets/INCOPR_compo_1_test.png';
 import { Image } from 'astro:assets';
+const content = marked.parse(data.text)
+
 ---
 <div class="fixed hidden pointer-events-none size-full md:block -z-10 lg:-translate-y-1/6 -translate-x-1/5" style={`background-image:url(${compo1.src});background-size:contain;background-repeat:no-repeat;aspect-ratio:1362/898`}></div>
 	<Image class="object-contain -translate-x-2 md:hidden" src={compo1} alt="Abstract drawing of flux" width="1362" height="898"/>
 	<div class="flex flex-col w-full lg:w-1/3 md:mt-24 lg:ml-[50%] p-4">
-		<h1 class="flex-1 mb-4 text-center md:mb-0 md:text-left text-3x md:text-5xl font-balthazar ">
-			{index[`title_${lang}`].map((item) => (
-				item.highlight ? (
-				<span class="text-2xl highlight-marker font-lexend md:text-4xl">
-					{item.text}
-				</span>
-				) : (
-				<span class="text-3xl md:text-5xl">
-					{item.text}{" "}
-				</span>
-				)
-			))}
+		<h1 class="flex-1 mb-4 text-2xl text-center uppercase md:mb-2 md:text-left font-lexend md:text-4xl">
+			<span class="highlight-marker">{data.catch}</span>
 		</h1>
 		<div class="flex-1 my-4 prose whitespace-pre-line bg-white">
 			<Fragment set:html={content} />
