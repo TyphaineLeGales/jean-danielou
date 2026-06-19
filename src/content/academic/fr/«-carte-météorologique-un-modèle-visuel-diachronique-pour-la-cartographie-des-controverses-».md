@@ -1,23 +1,21 @@
 ---
-title: « Carte météorologique. Un modèle visuel diachronique pour la
-  cartographie des controverses »
+title: « Weather Map. A Diachronic Visual Model for Controversy Mapping »
 date: "2023"
 link: https://www.degruyterbrill.com/document/doi/10.1515/9783111317779-017/html?srsltid=AfmBOooj647q0rrj_m4AWjUkWf2c2VxbmpzLD_VE4nlMYjVAV9IEKheN
 publishedon: "Armaselu Florentina & Fickers Andreas (eds), Zoomland : Exploring
   Scale in Digital History and Humanities, De Gruyter"
-text: "« Un modèle visuel diachronique pour la cartographie des controverses »
-  dans Armaselu Florentina et Fickers Andreas (dir.), Zoomland : Explorer
-  l’échelle dans l’histoire et les sciences humaines numériques, De Gruyter | La
-  Carte Météo est un modèle visuel permettant d’étudier les débats publics sur
-  les médias. S’appuyant sur les archives de Media Cloud, ce modèle transforme
-  une simple requête en une visualisation sophistiquée grâce à la grammaire
-  visuelle des cartes météorologiques synoptiques. Les pics de pression et les
-  affrontements entre masses d’air servent à décrire les conflits médiatiques à
-  travers la dimension temporelle, en explorant les dynamiques humaines et non
-  humaines qui animent la controverse. La Carte Météo a été conçue comme un
-  outil numérique destiné à aider les étudiants et les chercheurs à analyser les
-  débats publics, dans le cadre de la cartographie des controverses initiée par
-  Bruno Latour. Ce modèle visuel repousse notamment les limites de la
-  visualisation de réseaux, en explorant des techniques avancées de conception
-  graphique. Il en résulte une application web."
+text: The Weather Map is a visual model to investigate public debates on media.
+  Relying on the Media Cloud archives, the visual model transforms a simple
+  query into a sophisticated visualization by employing the visual grammar of
+  synoptic weather charts. Peaks of pressure and clashes between airmasses are
+  used to de-scribe the conflicts in media through the temporal dimension,
+  diving into the human and non-human dynamics that make the controversy alive.
+  The Weather Map was conceived as a digital tool to help students and scholars
+  analyze public debates, according to the controversy mapping field founded by
+  Bruno Latour. In particular, the visual model pushes the boundaries of network
+  visualization, explor-ing advanced techniques of graphic design. The outcome
+  is a web-based application
+tags:
+  - name: Controversies
+  - name: Data visualization
 ---
