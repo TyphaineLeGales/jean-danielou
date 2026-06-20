@@ -16,4 +16,6 @@ images:
 ---
 Pétrole, thé, sucre, tabac, bois, orchidées… Comment regarder la mondialisation ? Comment apprendre à voir les chaînes globales qui mettent au travail, disciplinent et font circuler autour du monde les corps que nous consommons massivement ? Comment dépasser la surface lisse et brillante des produits finis que nous offre le capitalisme sur ses étals pour remonter les circuits labyrinthiques qui enserrent l’espace terrestre et où se forment les substances de nos existences ?
 
+[test link](https://clarissepillard.com/)
+
 ![Poster de la residence a Reflet Machine, 10 rue des écoufes a Paris](/images/uploads/capture-d’écran-2026-06-05-à-15.11.26.png "Poster de la residence a Reflet Machine, 10 rue des écoufes a Paris")
