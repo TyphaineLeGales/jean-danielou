@@ -1,35 +1,29 @@
 ---
-title: "« Controverses dans les projets de construction d'éoliennes : comment
-  les systèmes sociaux influencent la performance des projets »"
+title: "« Controversy in Wind Energy Construction Projects : How Social Systems
+  Impact Project Performance »"
 date: "2023"
 link: https://www.sciencedirect.com/science/article/abs/pii/S0301421523000927
 publishedon: Energy Policy
-text: "Le secteur de l'énergie s'efforce de relever de nombreux défis :
-  satisfaire la demande énergétique croissante, respecter les exigences des
-  politiques en matière d'énergies renouvelables et moderniser les
-  infrastructures vieillissantes. Les projets énergétiques sont complexifiés par
-  les controverses qu'ils peuvent susciter entre les parties prenantes,
-  engendrant des désaccords sur les impacts environnementaux, économiques et
-  esthétiques. Les conflits tels que les manifestations, les pétitions ou les
-  poursuites judiciaires peuvent entraîner des retards et des dépassements de
-  coûts, difficiles à prévoir pour les promoteurs de projets. À partir de la
-  littérature et des médias, cette étude vise à identifier les tendances des
-  controverses liées aux projets énergétiques. Elle utilise une analyse de
-  contenu mixte, déductive et inductive, pour déterminer les actions, les phases
-  de projet et les parties prenantes les plus fréquemment abordées dans la
-  littérature académique et les médias. Grâce à l'analyse des cooccurrences de
-  codes, l'étude évalue quelles parties prenantes entreprennent des actions
-  spécifiques à différentes phases du projet. Les résultats montrent que les
-  opposants les plus actifs aux projets de développement énergétique sont les
-  membres de la communauté, et que les actions d'opposition sont plus fréquentes
-  lors de la phase de proposition. Ces résultats soulignent l'importance
-  d'impliquer les communautés dès les premières étapes du cycle de vie des
-  projets. L'opposition se manifeste généralement par la diffusion
-  d'informations au sein des communautés, notamment par des lettres aux
-  journaux, des bulletins d'information en ligne et des réunions publiques. À
-  partir de cette analyse, des recommandations politiques sont formulées à
-  l'intention des promoteurs de projets énergétiques afin de mieux anticiper et
-  atténuer les conflits."
+text: The energy industry strives to address a number of challenges—satisfy
+  increasing energy demands, fulfill renewable energy policy requirements, and
+  update aging infrastructure. Complicating energy projects are the
+  controversies they can stir among stakeholders, sparking disagreements about
+  environmental, economic, and aesthetic outcomes. Conflicts such as protests,
+  petitions, or lawsuits can lead to schedule delays and cost overruns, which
+  are difficult for project sponsors to predict. Using literature and news
+  media, this study aims to identify trends in project controversies across
+  energy projects. The study uses a mixed deductive and inductive content
+  analysis to determine which actions, project phases, and stakeholders are
+  discussed most frequently within both academic literature and news media.
+  Using code cooccurrences, the study evaluates which stakeholders take specific
+  actions at different project phases. Results show that the most active
+  opposing stakeholders to energy development projects are community members,
+  and actions opposing a project most frequently occur in the proposal phase.
+  These results highlight the importance of engaging with communities early in
+  project lifecycles. Opposition typically includes dissemination of information
+  within communities, including letters to editors, internet newsletters, and
+  public meetings. From this analysis, policy recommendations are provided for
+  energy project sponsors to better anticipate and mitigate conflict.
 tags:
-  - name: Politiques énergétiques
+  - name: Controverses
 ---
