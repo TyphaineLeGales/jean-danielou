@@ -1,5 +1,5 @@
 ---
-title: « Ethnographier la mondialisation »
+title: Ethnographier la mondialisation
 date: 15 octobre 2024
 link: https://aoc.media/analyse/2024/10/14/comment-reterritorialiser-la-mondialisation/
 publishedon: Analyse Opinion Critique
