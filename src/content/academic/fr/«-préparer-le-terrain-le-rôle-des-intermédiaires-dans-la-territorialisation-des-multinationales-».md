@@ -1,6 +1,6 @@
 ---
-title: « Préparer le terrain. Le rôle des intermédiaires dans la
-  territorialisation des multinationales »
+title: Préparer le terrain. Le rôle des intermédiaires dans la
+  territorialisation des multinationales
 date: "2024"
 link: https://journals.openedition.org/rac/36609
 publishedon: Revue d’anthropologie des connaissances
@@ -15,4 +15,7 @@ text: Cet article s’intéresse au rôle joué par les intermédiaires dans le
   le rôle de l’intermédiaire n’est pas uniquement de faire le lien entre des
   personnes étrangères les unes aux autres, mais aussi et surtout de préparer le
   terrain afin de rendre possible la territorialisation des multinationales.
+tags:
+  - name: Globalization
+  - name: Brokers
 ---
