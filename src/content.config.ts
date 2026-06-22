@@ -67,7 +67,7 @@ const academicSchema = z.object({
 
 
 const collaborationsSchema = z.object({
-  title: z.string(),
+  name: z.string(),
   link: z.string(),
   lead: z.string(),
   practice: z.string(),

@@ -90,7 +90,7 @@ collections:
     create: true
     i18n: true
     fields: 
-      - { label: "Name of collaborator", name: "title", widget: "string", i18n: true }
+      - { label: "Name of collaborator", name: "name", widget: "string", i18n: true }
       - { label: "Link to website", name: "link", widget: "string", i18n: duplicate}
       - { label: "Type of practice", name: "practice", widget: "string", i18n: true}
       - { label: "Short decription", name: "lead", widget: "text", i18n: true}
