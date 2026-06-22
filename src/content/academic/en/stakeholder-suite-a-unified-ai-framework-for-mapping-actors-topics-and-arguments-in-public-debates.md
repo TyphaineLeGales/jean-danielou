@@ -5,6 +5,22 @@ date: 19 décembre 2025
 link: https://arxiv.org/abs/2512.17347
 publishedon: "Proceedings of the 19th Conference of the European Chapter of the
   Association for  Computational Linguistics (Volume 3: System Demonstrations)"
+text: "Public debates surrounding infrastructure and energy projects involve
+  complex networks of stakeholders, arguments, and evolving narratives.
+  Understanding these dynamics is crucial for anticipating controversies and
+  informing engagement strategies, yet existing tools in media intelligence
+  largely rely on descriptive analytics with limited transparency. This paper
+  presents Stakeholder Suite, a framework deployed in operational contexts for
+  mapping actors, topics, and arguments within public debates. The system
+  combines actor detection, topic modeling, argument extraction and stance
+  classification in a unified pipeline. Tested on multiple energy infrastructure
+  projects as a case study, the approach delivers fine-grained, source-grounded
+  insights while remaining adaptable to diverse domains. The framework achieves
+  strong retrieval precision and stance accuracy, producing arguments judged
+  relevant in 75% of pilot use cases. Beyond quantitative metrics, the tool has
+  proven effective for operational use: helping project teams visualize networks
+  of influence, identify emerging controversies, and support evidence-based
+  decision-making."
 tags:
   - name: Controversies
   - name: Artificial intelligence
