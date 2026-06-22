@@ -83,34 +83,31 @@ collections:
         i18n: true
         fields:
           - { label: "Name", name: "name", widget: "string" }
-
+  
   - name: "collaborations"
     label: "Collaborations"
     folder: "src/content/collaborations"
     create: true
     i18n: true
-    slug: "{{fields.slug}}"
-    fields:
+    fields: 
       - { label: "Name of collaborator", name: "title", widget: "string", i18n: true }
       - { label: "Link to website", name: "link", widget: "string", i18n: duplicate}
-      - { label: "Collaborator short description", name: "lead", widget: text, i18n: true}
-      - label: "tags"
-        name: "tags"
+      - { label: "Type of practice", name: "practice", widget: "string", i18n: true}
+      - { label: "Short decription", name: "lead", widget: "text", i18n: true}
+      - label: "Projects"
+        name: projects
         widget: "list"
-        i18n: true
-        fields: 
-          - {label: "Type of work", name: "name", widget: "string", i18n: true}
-      - { label: "Description", name: "body", widget: "markdown", i18n: true }
-      - { label: "Thumbnail", name: "thumbnail", widget: "image", i18n: duplicate }
-      - { label: "Thumbnail alt", name: "thumbnailalt", widget: "string", i18n: true }
-      - { label: "PDF", name: "pdf", widget: "file", required: false, i18n: duplicate }
-      - label: "Images"
-        name: "images"
-        widget: "list"
-        i18n: true
         fields:
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Description", name: "alt", widget: "string" }
+          - { name : "Name of project", name: "title", widget: "string", i18n: true}
+          - { label: "Description", name: "body", widget: "markdown", i18n: true }
+          - { label: "PDF", name: "pdf", widget: "file", required: false, i18n: duplicate }
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            i18n: true
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Description", name: "alt", widget: "string" }
 
   - name: "selected works"
     label: "selected"

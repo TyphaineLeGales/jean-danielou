@@ -21,9 +21,14 @@ const tagSchema = z.object({
   name: z.string().optional(),
 });
 
-const collaboratorSchema = z.object({
-  name: z.string(),
-});
+// const collaboratorSchema = z.object({
+//   name: z.string(),
+// });
+const projectSchema = (z.object({
+  title: z.string(),
+  images: z.array(imagesSchema),
+  pdf: z.string().optional(),
+}))
 
 // --- Collection schemas ---
 
@@ -60,15 +65,13 @@ const academicSchema = z.object({
 });
 
 
+
 const collaborationsSchema = z.object({
   title: z.string(),
   link: z.string(),
   lead: z.string(),
-  tags: z.array(tagSchema).optional(),
-  thumbnail: z.string(),
-  thumbnailalt: z.string(),
-  images: z.array(imagesSchema),
-  pdf: z.string().optional(),
+  practice: z.string(),
+  projects: z.array(projectSchema),
 });
 
 // --- Collections ---
