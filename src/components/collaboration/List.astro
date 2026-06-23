@@ -4,8 +4,18 @@ const { data, id, lang } = Astro.props;
 const href = lang === 'en' ? `/en/collaborations/${id}` : `/collaborations/${id}`;
 ---
 
-<a href={href} class="flex flex-col mb-12 md:flex-row xl:px-20">
-    <div class="flex justify-center mb-4 ">
+<a href={href} class="mb-12 ">
+    <Tags tags={data.practice}/>
+    <div class="flex mt-1">
+  
+        <a href={data.link} class="pr-5 underline font-balthazar"><h2 class="normal-case! ">{data.name}</h2></a>
+    </div>
+    <ul class="ml-5">
+        {
+            data.projects.map(p => <li class="bullet-point"><p>{p.title}</p></li>)
+        }
+    </ul>
+    <!-- <div class="flex justify-center mb-4 ">
         <div class="flex items-center justify-center overflow-hidden border xl:w-1/2 bg-toxic-green">
             <img
                 src={data.thumbnail}
@@ -22,5 +32,5 @@ const href = lang === 'en' ? `/en/collaborations/${id}` : `/collaborations/${id}
         <div class="p-6 min-w-75 lg:min-w-80">
             {data.lead}
         </div>
-    </div>
+    </div> -->
 </a>

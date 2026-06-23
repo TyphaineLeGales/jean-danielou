@@ -22,4 +22,12 @@ projects:
         alt: flowers in a factory
       - image: /images/uploads/reflet_machine_3.jpg
         alt: archives on a wall
+  - title: Infrastructure florale, infrastructure sentimentale
+    body: Test description
+    images:
+      - image: /images/uploads/capture-d’écran-2026-04-28-à-09.42.16-1-4.png
+        alt: flowers in a factory
+      - image: /images/uploads/reflet_machine_3.jpg
+        alt: archives on a wall
+
 ---

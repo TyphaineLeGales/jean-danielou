@@ -89,25 +89,28 @@ collections:
     folder: "src/content/collaborations"
     create: true
     i18n: true
+    slug: "{{name}}"
     fields: 
-      - { label: "Name of collaborator", name: "name", widget: "string", i18n: true }
+      - { label: "Name of collaborator", name: "name", widget: "string", i18n: duplicate }
       - { label: "Link to website", name: "link", widget: "string", i18n: duplicate}
       - { label: "Type of practice", name: "practice", widget: "string", i18n: true}
-      - { label: "Short decription", name: "lead", widget: "text", i18n: true}
-      - label: "Projects"
-        name: projects
+
+  - name: "projects"
+    label: Projects
+    i18n: true
+    widget: "list"
+    fields:
+      - { label : "Name of project", name: "title", widget: "string", i18n: true}
+      - { label : "Name of collaborator", name: "collab", widget: "string", i18n: duplicate}
+      - { label: "Description", name: "body", widget: "markdown", i18n: true }
+      - { label: "PDF", name: "pdf", widget: "file", required: false, i18n: duplicate }
+      - label: "Images"
+        name: "images"
         widget: "list"
+        i18n: true
         fields:
-          - { label : "Name of project", name: "title", widget: "string", i18n: true}
-          - { label: "Description", name: "body", widget: "markdown", i18n: true }
-          - { label: "PDF", name: "pdf", widget: "file", required: false, i18n: duplicate }
-          - label: "Images"
-            name: "images"
-            widget: "list"
-            i18n: true
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Description", name: "alt", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Description", name: "alt", widget: "string" }
 
   - name: "selected works"
     label: "selected"

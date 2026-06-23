@@ -24,11 +24,7 @@ const tagSchema = z.object({
 // const collaboratorSchema = z.object({
 //   name: z.string(),
 // });
-const projectSchema = (z.object({
-  title: z.string(),
-  images: z.array(imagesSchema),
-  pdf: z.string().optional(),
-}))
+
 
 // --- Collection schemas ---
 
@@ -69,10 +65,15 @@ const academicSchema = z.object({
 const collaborationsSchema = z.object({
   name: z.string(),
   link: z.string(),
-  lead: z.string(),
   practice: z.string(),
-  projects: z.array(projectSchema),
 });
+
+const projectSchema = (z.object({
+  title: z.string(),
+  collab: z.string(),
+  images: z.array(imagesSchema),
+  pdf: z.string().optional(),
+}))
 
 // --- Collections ---
 
@@ -101,6 +102,13 @@ const collaborations = defineCollection({
   schema: collaborationsSchema,
 });
 
+const projects = defineCollection({
+  loader: glob({ base: './src/content/projects', pattern: '**/*.{md,mdx}' }),
+  schema: projectSchema,
+});
+
+
+
 const selected = defineCollection({
   loader: glob({ base: './src/content/selected', pattern: '**/*.{md,mdx}' }),
   schema: z.object({
@@ -124,6 +132,7 @@ export const collections = {
   medias,
   academic,
   collaborations,
+  projects,
   selected,
   cv
 };
