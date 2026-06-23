@@ -8,11 +8,8 @@ images:
   - image: /images/uploads/reflet_machine_3.jpg
     alt: Mur d'archives
 ---
-Exposition @RefletMachine (Paris)
+**Exposition** @RefletMachine (Paris, 4)
 
-
-\Pétrole, thé, sucre, tabac, bois, orchidées… Comment regarder la mondialisation ? Comment apprendre à voir les chaînes globales qui mettent au travail, disciplinent et font circuler autour du monde les corps que nous consommons massivement ? Comment dépasser la surface lisse et brillante des produits finis que nous offre le capitalisme sur ses étals pour remonter les circuits labyrinthiques qui enserrent l’espace terrestre et où se forment les substances de nos existences ?
-
-
+Pétrole, thé, sucre, tabac, bois, orchidées… Comment regarder la mondialisation ? Comment apprendre à voir les chaînes globales qui mettent au travail, disciplinent et font circuler autour du monde les corps que nous consommons massivement ? Comment dépasser la surface lisse et brillante des produits finis que nous offre le capitalisme sur ses étals pour remonter les circuits labyrinthiques qui enserrent l’espace terrestre et où se forment les substances de nos existences ?
 
 ![Poster de l'expo](/images/uploads/capture-d’écran-2026-06-05-à-15.11.26.png "poster")
