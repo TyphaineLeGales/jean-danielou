@@ -93,7 +93,7 @@ collections:
     fields: 
       - { label: "Name of collaborator", name: "name", widget: "string", i18n: duplicate }
       - { label: "Link to website", name: "link", widget: "string", i18n: duplicate}
-      - { label: "Type of practice", name: "practice", widget: "string", i18n: true}
+      - { label: "Type of practice", name: "practice", widget: "string", i18n: true, required: true}
 
   - name: "projects"
     label: Projects
@@ -102,9 +102,9 @@ collections:
     create: true
     slug: "{{title}}"
     fields:
-      - { label : "Name of project", name: "title", widget: "string", i18n: true}
+      - { label : "Name of project", name: "title", widget: "string", i18n: true, required: true}
       - { label : "Name of collaborator", name: "collab", widget: "string", i18n: duplicate}
-      - { label: "Description", name: "body", widget: "markdown", i18n: true }
+      - { label: "Description", name: "body", widget: "markdown", i18n: true, required: true }
       - { label: "PDF", name: "pdf", widget: "file", required: false, i18n: duplicate }
       - label: "Images"
         name: "images"
@@ -120,9 +120,9 @@ collections:
     create: true
     i18n: true
     fields: 
-      - { label: "Title", name: "title", widget: "string", i18n: true}
+      - { label: "Title", name: "title", widget: "string", i18n: true, required: true}
       - {label: "link", name: "link", widget: "string", i18n: duplicate}
-      - {label: "Type - book, collab etc...", name: "name", widget: "string", i18n: true}
+      - {label: "Type - book, collab etc...", name: "name", widget: "string", i18n: true, required: true}
       - {label: "Date", name: "date", widget: "string", i18n: duplicate}
 
   - name: "CV"
