@@ -1,7 +1,7 @@
 ---
-catch: Jean Daniélou est sociologue
+catch: .
 text: >-
-  Ses recherches portent sur la territorialisation des infrastructures
+  Jean Daniélou est sociologue. Ses recherches portent sur les infrastructures
   énergétiques et la mondialisation. Il a enquêté aux Philippines, en Chine, à
   Singapour, en Inde et aux Etats-Unis.
 

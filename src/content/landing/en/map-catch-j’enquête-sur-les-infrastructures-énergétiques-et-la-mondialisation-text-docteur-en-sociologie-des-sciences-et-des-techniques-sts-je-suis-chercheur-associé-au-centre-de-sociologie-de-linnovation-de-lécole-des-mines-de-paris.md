@@ -1,9 +1,9 @@
 ---
-catch: Jean Daniélou is a sociologist
+catch: .
 text: >-
-  His research focuses on the territorialization of energy infrastructure and
-  globalization. He has conducted fieldwork in the Philippines, China,
-  Singapore, India, and the United States.
+  Jean Daniélou is a sociologist. His research focuses on the territorialization
+  of energy infrastructure and globalization. He has conducted fieldwork in the
+  Philippines, China, Singapore, India, and the United States.
 
 
   His first book, *Exiting the fossil world* (Presses des Mines, 2024), is an insider account of a multinational energy company, describing the transformations it is undergoing as a result of global warming. His second book, *Incorporated. Frictions, Residues, and Affects of Globalization* (Premier Parallèle, 2025), explores the aberrant choreography of human and non-human bodies caught up in global production chains.
