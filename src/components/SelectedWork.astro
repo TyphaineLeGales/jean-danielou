@@ -9,11 +9,11 @@ import Tags from './Tags.astro';
 
 ---
 <div class="w-full mt-4 bg-white">
-		<h2 class="w-full mb-12 text-2xl font-semibold text-right uppercase md:text-5xl font-lexend page-header"> 
-            <!-- {index[`selected_${lang}`]} -->
-			 {sorted[0].catch}
+		<h2 class="w-full mb-12 text-3xl! font-semibold text-right uppercase md:text-5xl font-lexend highlight-marker"> 
+            {index[`selected_${lang}`]}
+			 <!-- {sorted[0].catch} -->
         </h2>
-		<ul class="w-full">
+		<ul class="w-full mt-4">
 			{sorted.map(e =><li class="px-2 bg-white border-b md:px-4 first:border-t">
 				<a href={e.data.link} target="_blank">
 					<span class="flex justify-between w-full text-xs md:text-sm">
