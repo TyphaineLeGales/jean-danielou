@@ -6,8 +6,8 @@ const lang = Astro.url.pathname.startsWith('/en')
   : 'fr';
 const {collaboration} = Astro.props
 import { marked } from "marked";
-const lead = marked.parse(collaboration.data.lead);
-const body = marked.parse(collaboration.body);
+// const lead = marked.parse(collaboration.data.lead);
+// const body = marked.parse(collaboration.body);
 ---
 <div class="relative" >
     <div class="z-10 flex flex-col items-center self-start justify-between py-6 bg-white border-b md:sticky top-12 md:flex-row">
@@ -40,7 +40,7 @@ const body = marked.parse(collaboration.body);
         </div>
         <div class="sticky self-start flex-1 p-6 top-30 text-content min-h-[75vh]">
             <div class="py-4 mb-4 text-lg font-medium">
-                <Fragment set:html={lead} />
+                <!-- <Fragment set:html={lead} /> -->
             </div>
              {collaboration.data.pdf && <div class="mt-4">
                 <a
@@ -54,7 +54,7 @@ const body = marked.parse(collaboration.body);
                 </a>
             </div>}
             <div class="text-sm">
-                <Fragment set:html={body} />
+                <!-- <Fragment set:html={body} /> -->
             </div>
            
         </div>

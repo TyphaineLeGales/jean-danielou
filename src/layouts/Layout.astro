@@ -2,7 +2,7 @@
 import Topbar from '../components/Topbar.astro';
 import Footer from '../components/Footer.astro';
 import Sidebar from '../components/Sidebar.vue';
-import PageTransition from '../components/PageTransition.vue';
+// import PageTransition from '../components/PageTransition.vue';
 interface Props {
 	title?: string;
 	description?: string;
@@ -77,7 +77,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 			</div>
 		</main>
 		<Footer/>
-		<PageTransition client:media="(min-width: 768px)" currentPath={Astro.url.pathname}/>
+		<!-- <PageTransition client:media="(min-width: 768px)" currentPath={Astro.url.pathname}/> -->
 	</body>
 </html>
 
