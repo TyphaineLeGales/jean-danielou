@@ -1,7 +1,7 @@
 ---
 title: Infrastructure florale, superstructure sentimentale
 collab: Clarisse Pillard
-pdf: /images/uploads/n5q-pch5tbwd.jpg
+pdf: ""
 images: []
 ---
 **Performance** @ Face aux extractivismes (colloque)
