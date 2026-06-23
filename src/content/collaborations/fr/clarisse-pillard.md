@@ -5,8 +5,8 @@ practice: Visual Art
 lead: Test description
 projects:
   - title: Feelings of detachment
-    body: >-
-      **\_\_\_\_\_\_\_\__ Pétrole, thé, sucre, tabac, bois, orchidées… Comment
+    body: 
+      Pétrole, thé, sucre, tabac, bois, orchidées… Comment
       regarder la mondialisation ? Comment apprendre à voir les chaînes globales
       qui mettent au travail, disciplinent et font circuler autour du monde les
       corps que nous consommons massivement ? Comment dépasser la surface lisse
