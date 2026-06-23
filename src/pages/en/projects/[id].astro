@@ -1,0 +1,23 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { slugify } from '../../../utils/slugify.js';
+export const getStaticPaths = (async() => {
+    const projects = await getCollection('projects')
+    const sorted = projects.filter(a => a.id.includes("en/"))
+    return sorted.map(project => {
+        return {
+            params: {id: slugify(project.id.replace('en/', ''))},
+            props: {project}
+        }
+
+    });
+}) satisfies GetStaticPaths;
+
+import ProjectDetails from "../../../components/ProjectDetails.astro";
+const {project} = Astro.props
+---
+<Layout>
+    <ProjectDetails project={project} lang="en"/>
+</Layout>

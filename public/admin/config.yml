@@ -100,7 +100,7 @@ collections:
     folder: "src/content/projects"
     i18n: true
     create: true
-    slug: "{{name}}"
+    slug: "{{title}}"
     fields:
       - { label : "Name of project", name: "title", widget: "string", i18n: true}
       - { label : "Name of collaborator", name: "collab", widget: "string", i18n: duplicate}

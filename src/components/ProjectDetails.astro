@@ -1,0 +1,69 @@
+---
+import Quit from '../components/UI/Quit.astro'
+import {collab} from '../config/UI'
+const {project, lang} = Astro.props
+import { marked } from "marked";
+console.log(project)
+const body = marked.parse(project.body);
+---
+<div class="relative" >
+    <div class="z-10 flex flex-col items-center self-start justify-between py-6 bg-white border-b md:sticky top-12 md:flex-row">
+        <a href="/collaborations" class="md:top-auto md:mb-0 p-0.8 md:p-0">
+            <Quit />
+        </a>
+        <h1 class="mt-2 text-2xl md:text-3xl font-balthazar">
+            <span>{project.data.title}</span>
+        </h1>
+        <a href={project.data.link} target="_blank" class="font-light underline styled-link"> 
+            {project.data.link} 
+        </a>
+    </div>
+   
+    <slot />
+    <div class="flex flex-col flex-1 md:flex-row">
+        <div class="flex-1 border border-t-0 md:border-none md:border-r md:mr-2 bg-toxic-green">
+            <div class="flex items-center overflow-x-auto snap-x snap-mandatory md:flex-col md:overflow-visible">
+                <img
+                    src={project.data.thumbnail}
+                    class="w-[95vw] shrink-0 snap-center md:w-auto"
+                />
+
+                {project.data.images?.map(i => (
+                    <img
+                    src={i.image}
+                    alt={i.description}
+                    class="w-[95vw] shrink-0 snap-center md:w-auto"
+                    />
+                ))}
+            </div>
+        </div>
+        <div class="sticky self-start flex-1 p-6 top-30 text-content min-h-[75vh]">
+          
+             {project.data.pdf && <div class="mt-4">
+                <a
+                    href={project.data.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    <h2 class="w-full mb-12 text-lg font-semibold text-right uppercase md:text-2xl font-lexend highlight-marker">
+                        {collab[`pdf_${lang}`]}
+                    </h2>
+                </a>
+            </div>}
+            <div class="my-5 text-sm">
+                <Fragment set:html={body} />
+            </div>
+           
+        </div>
+    </div>
+</div>
+<style >
+ .text-content :global(p > a) {
+    text-decoration: underline;
+  }
+
+  .text-content :global(div > p > img) {
+    padding: 24px 0;
+  }
+
+</style>
