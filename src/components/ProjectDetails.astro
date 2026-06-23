@@ -3,7 +3,6 @@ import Quit from '../components/UI/Quit.astro'
 import {collab} from '../config/UI'
 const {project, lang} = Astro.props
 import { marked } from "marked";
-console.log(project)
 const body = marked.parse(project.body);
 ---
 <div class="relative" >
@@ -23,11 +22,6 @@ const body = marked.parse(project.body);
     <div class="flex flex-col flex-1 md:flex-row">
         <div class="flex-1 border border-t-0 md:border-none md:border-r md:mr-2 bg-toxic-green">
             <div class="flex items-center overflow-x-auto snap-x snap-mandatory md:flex-col md:overflow-visible">
-                <img
-                    src={project.data.thumbnail}
-                    class="w-[95vw] shrink-0 snap-center md:w-auto"
-                />
-
                 {project.data.images?.map(i => (
                     <img
                     src={i.image}
@@ -38,7 +32,6 @@ const body = marked.parse(project.body);
             </div>
         </div>
         <div class="sticky self-start flex-1 p-6 top-30 text-content min-h-[75vh]">
-          
              {project.data.pdf && <div class="mt-4">
                 <a
                     href={project.data.pdf}

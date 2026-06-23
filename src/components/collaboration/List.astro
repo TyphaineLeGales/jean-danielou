@@ -1,7 +1,6 @@
 ---
 import Tags from "../Tags.astro";
 const { data, id, lang } = Astro.props;
-const href = lang === 'en' ? `/en/collaborations/${id}` : `/collaborations/${id}`;
 import { getCollection } from 'astro:content';
 import { slugify } from '../../utils/slugify';
 const projects = await getCollection('projects')
@@ -9,14 +8,20 @@ const sorted = projects.filter(p => p.id.includes(lang+"/") && p.data.collab == 
 const slugNames = sorted.map(p => slugify(p.id.slice(3)))
 ---
 
-<a href={href} class="mb-12 ">
-    <Tags tags={data.practice}/>
-    <div class="flex mt-1">
-        <a href={data.link} class="pr-5 underline font-balthazar"><h2 class="normal-case! ">{data.name}</h2></a>
+<div class="pb-6 mb-12 border-b border-b-black">
+    <div class="">
+        <Tags tags={data.practice}/>
     </div>
-    <ul class="ml-5">
+    <div class="flex mt-1">
+        <a href={data.link} class="pr-5 underline font-balthazar">
+            <h2 class="normal-case! text-3xl! ">{data.name}</h2>
+        </a>
+    </div>
+    <ul class="mt-6 ml-5">
         {
-            sorted.map((p, i) => <li class="bullet-point"><a href={"/projects/"+ slugNames[i]}>{p.data.title}</a></li>)
+            sorted.map((p, i) => <li class="bullet-point">
+                <a href={"/projects/"+ slugNames[i]}>{p.data.title}</a>
+                </li>)
         }
     </ul>
-</a>
+</div>
