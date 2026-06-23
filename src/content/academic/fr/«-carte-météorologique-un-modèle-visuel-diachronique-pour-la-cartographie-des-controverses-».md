@@ -1,5 +1,5 @@
 ---
-title: « Weather Map. A Diachronic Visual Model for Controversy Mapping »
+title: Weather Map. A Diachronic Visual Model for Controversy Mapping
 date: "2023"
 link: https://www.degruyterbrill.com/document/doi/10.1515/9783111317779-017/html?srsltid=AfmBOooj647q0rrj_m4AWjUkWf2c2VxbmpzLD_VE4nlMYjVAV9IEKheN
 publishedon: "Armaselu Florentina & Fickers Andreas (eds), Zoomland : Exploring

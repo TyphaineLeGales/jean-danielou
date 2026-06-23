@@ -1,6 +1,6 @@
 ---
-title: "« Controversy in Wind Energy Construction Projects : How Social Systems
-  Impact Project Performance »"
+title: "Controversy in Wind Energy Construction Projects : How Social Systems
+  Impact Project Performance"
 date: "2023"
 link: https://www.sciencedirect.com/science/article/abs/pii/S0301421523000927
 publishedon: Energy Policy

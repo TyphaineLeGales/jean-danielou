@@ -1,5 +1,5 @@
 ---
-title: « Des conditions matérielles de production de la philo »
+title: Des conditions matérielles de production de la philo
 date: 27 août 2014
 link: "
   https://www.lemonde.fr/idees/article/2014/08/27/des-conditions-materielles-de\

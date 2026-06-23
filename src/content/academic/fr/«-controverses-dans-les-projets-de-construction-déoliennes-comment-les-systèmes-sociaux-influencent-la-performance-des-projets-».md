@@ -1,6 +1,6 @@
 ---
-title: "« Controversy in Wind Energy Construction Projects : How Social Systems
-  Impact Project Performance »"
+title: "Controversy in Wind Energy Construction Projects : How Social Systems
+  Impact Project Performance"
 date: "2023"
 link: https://www.sciencedirect.com/science/article/abs/pii/S0301421523000927
 publishedon: Energy Policy
@@ -25,5 +25,5 @@ text: The energy industry strives to address a number of challenges—satisfy
   public meetings. From this analysis, policy recommendations are provided for
   energy project sponsors to better anticipate and mitigate conflict.
 tags:
-  - name: Controverses
+  - name: Controversies
 ---

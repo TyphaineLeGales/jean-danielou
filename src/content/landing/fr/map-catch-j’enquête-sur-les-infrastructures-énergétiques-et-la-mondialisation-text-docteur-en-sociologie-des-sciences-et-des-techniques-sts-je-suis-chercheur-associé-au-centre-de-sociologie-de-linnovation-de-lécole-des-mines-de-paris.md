@@ -1,8 +1,13 @@
 ---
-catch: Chercheur, auteur, dessinateur
+catch: Jean Daniélou est sociologue
 text: >-
-  ## Recherche Création
+  Ses recherches portent sur la territorialisation des infrastructures
+  énergétiques et la mondialisation. Il a enquêté aux Philippines, en Chine, à
+  Singapour, en Inde et aux Etats-Unis.
 
 
-  Docteur en sociologie des sciences et des techniques (STS), Jean Daniélou est chercheur associé au Centre de sociologie de l'innovation de l'École des Mines de Paris. Ses travaux se situent à la croisée de la recherche-action et de la recherche-création sur les questions énergétiques et la mondialisation.
+  Son premier ouvrage, *Sortir du monde fossile* (Presses des Mines, 2024), est une recherche embarquée au sein d'une multinationale de l'énergie décrivant les transformations de celle-ci sous l'effet du réchauffement climatique. Son deuxième ouvrage, *Incorporated. Frictions, résidus et affects de la mondialisation* (Premier Parallèle, 2025), explore la chorégraphie aberrante des corps humains et non-humains pris dans les chaînes globales de production.
+
+
+  Sa pratique d'enquête se situe au croisement de la recherche-action et de la recherche-création. Il collabore régulièrement avec des artistes et a occupé différents postes au sein d'une entreprise de l'énergie. En 2027, il sera résident à la Villa Albertine, au Texas, avec le musicien Camille El Bacha.
 ---
