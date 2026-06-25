@@ -4,7 +4,7 @@ collab: Nouvelle Séquence
 pdf: null
 images:
   - image: /images/uploads/nouvelle-s.png
-    alt: screen nouvelle s
+    alt: Screenshot
 ---
 How can the challenges of the climate crisis be portrayed in works of fiction? How can we achieve an accurate representation of scientific activity in a world mired in post-truth?
 

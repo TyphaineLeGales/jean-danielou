@@ -3,7 +3,7 @@ title: Boîte à outils "scientifiques"
 collab: Nouvelle Séquence
 images:
   - image: /images/uploads/nouvelle-s.png
-    alt: screen nouvelle s
+    alt: Screenshot
 ---
 Comment rendre compte des enjeux de la crise climatique dans les œuvres de fiction ? Comment arriver à une juste représentation de l’activité scientifique dans un monde plombé par la post-vérité ?
 
