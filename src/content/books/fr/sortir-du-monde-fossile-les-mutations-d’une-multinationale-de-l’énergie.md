@@ -20,4 +20,4 @@ En plongeant dans le quotidien des opérations de transformation déployées par
 
 
 
-Accessible gratuitement sur OpenEdition : https://books.openedition.org/pressesmines/person/10567
+Accessible gratuitement sur OpenEdition : <https://books.openedition.org/pressesmines/person/10567>
