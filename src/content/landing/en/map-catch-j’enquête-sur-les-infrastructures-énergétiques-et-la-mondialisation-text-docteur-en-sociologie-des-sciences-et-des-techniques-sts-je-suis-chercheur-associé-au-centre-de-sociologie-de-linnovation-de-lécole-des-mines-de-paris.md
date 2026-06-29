@@ -11,5 +11,5 @@ text: >-
   His first book, *Exiting the fossil world* (Presses des Mines, 2024), is an insider account of a multinational energy company, describing the transformations it is undergoing as a result of global warming. His second book, *Incorporated. Frictions, Residues, and Affects of Globalization* (Premier Parallèle, 2025), explores the aberrant choreography of human and non-human bodies caught up in global production chains.
 
 
-  His investigative practice lies at the intersection of action research and creative research. He regularly collaborates with artists and has held various positions within an energy company. In 2027, he will be an artist-in-residence at Villa Albertine in Texas, alongside musician Camille El Bacha.
+  His investigative practice lies at the intersection of action research and creative research. He collaborates with artists and has held various positions within an energy company. In 2027, he will be an artist-in-residence at Villa Albertine in Texas, alongside musician Camille El Bacha.
 ---
