@@ -8,4 +8,6 @@ text: "À quoi ressemble une société qui hérite à 60 ans, sur fond de terres
   économie et écologie convergent : l’héritage n’est pas une affaire de famille.
   C’est l’instrument par lequel une génération décide – ou non – de ce qu’elle
   doit à la suivante."
+thumbnail: /images/uploads/capture-d’écran-2026-10-30-à-19.01.35.png
+pdf: /images/uploads/l_a_revue_heritage.pdf
 ---
