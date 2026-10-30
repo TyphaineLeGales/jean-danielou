@@ -2,14 +2,17 @@
 import Layout from '../layouts/Layout.astro';
 import Media from '../components/Media.astro'
 import { getCollection } from 'astro:content';
+import {parseFrenchDate} from '../utils/parseDate'
 const medias = await getCollection('medias')
 const sorted = medias.filter(b => b.id.startsWith('fr/'))
-  .reverse()
+const sortedByDate = sorted.sort(
+  (a, b) => parseFrenchDate(b.data.date) - parseFrenchDate(a.data.date)
+);
 ---
 <Layout>
     <h1 class="my-12 text-3xl font-semibold uppercase md:text-5xl md:my-24 font-lexend page-header">Medias</h1>
     <ul class="md:px-20">
-        {sorted.map(media => 
+        {sortedByDate.map(media => 
         <li class="my-6">
             <Media data={media.data} description={media.body}/> 
         </li>)}
