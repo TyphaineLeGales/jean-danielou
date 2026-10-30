@@ -49,6 +49,8 @@ const mediasSchema = z.object({
   link: z.string().url(),
   publishedon: z.string(),
   text: z.string(),
+  pdf: z.string().optional(),
+  pdfthumbnail: z.string().optional(),
 });
 
 const academicSchema = z.object({
