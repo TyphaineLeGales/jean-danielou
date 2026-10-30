@@ -65,6 +65,8 @@ collections:
       - { label: "Link", name: "link", widget: "string", i18n: duplicate, required: true }
       - { label: "Published on", name: "publishedon", widget: "string", i18n: duplicate }
       - { label: "Description", name: "text", widget: "string", i18n: true, required: true }
+      - { label: "pdfThumbnail", name: "thumbnail", widget: "image", required: false, i18n: duplicate}
+      - { label: "pdf", name: "pdf", widget: "file", required: false, i18n: duplicate}
 
   - name: "academic"
     label: "Academic"

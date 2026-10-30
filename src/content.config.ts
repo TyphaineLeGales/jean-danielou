@@ -50,7 +50,7 @@ const mediasSchema = z.object({
   publishedon: z.string(),
   text: z.string(),
   pdf: z.string().optional(),
-  pdfthumbnail: z.string().optional(),
+  thumbnail: z.string().optional(),
 });
 
 const academicSchema = z.object({
