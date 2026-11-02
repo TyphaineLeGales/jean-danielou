@@ -1,45 +1,40 @@
 ---
-const { data } = Astro.props;
+import {collab} from '../config/UI'
+const { data, lang } = Astro.props;
 ---
-
 <div class="pt-12 pb-6 my-3 border-b">
-    <a class="block md:pl-6" href={data.link} target="_blank">
+    <div class={`grid gap-4 ${data.thumbnail ? 'md:grid-cols-[2fr_1fr]' : 'md:grid-cols-1'}`}>
 
-        <div class={`grid gap-4 ${data.thumbnail ? 'md:grid-cols-[2fr_1fr]' : 'md:grid-cols-1'}`}>
-
-            <div>
-                <h1 class="mb-2 text-2xl leading-6 underline md:leading-8 md:text-4xl font-balthazar">
+        <div>
+            <h1 class="mb-2 text-2xl underline md:text-4xl font-balthazar">
+                <a href={data.link} target="_blank">
                     {data.title}
-                </h1>
+                </a>
+            </h1>
 
-                <div class="flex flex-col gap-4 md:flex-row">
-                    <p class="w-full mb-2 text-sm md:w-40 shrink-0">
-                        Publié sur <span class="font-bold">{data.publishedon}</span> le {data.date}
-                    </p>
+            <div class="flex flex-col gap-4 md:flex-row">
+                <p class="w-full mb-2 text-sm md:w-40 shrink-0">
+                    Publié sur <span class="font-bold">{data.publishedon}</span> le {data.date}
+                </p>
 
-                    <div class="flex-1 py-3 leading-relaxed md:p-6">
-                        {data.text}
-                    </div>
-                </div>
+                <a href={data.link} target="_blank" class="flex-1 py-3 md:p-6">
+                    {data.text}
+                </a>
             </div>
+        </div>
 
-            {data.thumbnail && (
-                <div class="flex items-center justify-center">
-                    <a
-                    href={data.pdf}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >
-                   
+        {data.thumbnail && (
+            <div class="flex flex-col items-center justify-center md:ml-12">
+                <a href={data.pdf} target="_blank" rel="noopener noreferrer">
                     <img
                         src={data.thumbnail}
                         alt={data.title}
                         class="object-cover max-h-48"
-                        />
-                    </a>
-                </div>
-            )}
+                    />
+                    <p class="mt-3 text-center"><span class="bullet-point bottom-[2px]"></span>{collab[`pdf_${lang}`]}</p>
+                </a>
+            </div>
+        )}
 
-        </div>
-    </a>
+    </div>
 </div>
