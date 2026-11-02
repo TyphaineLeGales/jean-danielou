@@ -6,4 +6,6 @@ link: https://www.audap.org/nos-ressources/document/la-revue-heritages-en-questi
 publishedon: l'a Revue - AUDAP
 text: Entretien pour l'Agence d'urbanisme Atlantique et Pyrénées sur la question
   de l'héritage
+thumbnail: /images/uploads/capture-d’écran-2026-11-02-à-17.19.05.png
+pdf: /images/uploads/l_a_revue_heritage.pdf
 ---
